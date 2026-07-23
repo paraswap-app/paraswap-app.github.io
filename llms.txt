@@ -1,66 +1,31 @@
 # ParaSwap
-> ParaSwap is the former name of Velora, a non-custodial EVM trading protocol that aggregates liquidity and supports intent-based cross-chain execution.
 
-## What is ParaSwap
-ParaSwap began as a decentralized-exchange aggregator that compares and combines liquidity from DEXs and market makers. Its routing engine can split trades across pools or use intermediate tokens to improve execution. Unlike a single DEX, it searches multiple venues; unlike a centralized exchange, it does not hold user funds. ParaSwap was rebranded as Velora in 2025 and expanded into gas-abstracted, intent-based cross-chain trading.
-
-## How it works
-1. The user connects a wallet, selects the source and destination assets, enters an amount, and requests a quote.
-2. For Market swaps, an off-chain optimizer evaluates liquidity, price impact, gas, hops, and split routes, then prepares calldata for the Augustus smart contracts.
-3. The user approves the ERC-20 token when required and signs the swap; execution and settlement occur on-chain directly from the connected wallet.
-4. For Delta intent orders, the user signs an intent and settlement agents compete through an auction; the selected agent executes the route, including supported cross-chain routes.
+> ParaSwap, now Velora, is a non-custodial EVM trading protocol for quoting, routing, and settling swaps from your wallet.
 
 ## Key facts
-- ParaSwap is now branded Velora; PSP is a deprecated legacy token, while VLR is used for current governance and staking.
-- It is non-custodial: users retain wallet control until an approved contract executes a signed trade.
-- Supported EVM networks include Ethereum (1), BNB Chain (56), Avalanche (43114), Polygon (137), Gnosis (100), Arbitrum (42161), Optimism (10), Base (8453), Sonic (146), and Unichain (130).
-- Standard swaps primarily involve ERC-20 tokens, contract allowances, and optional typed-data permits.
-- Market routing uses Augustus contracts; Delta uses signed intents, competitive agent execution, and Portikus coordination.
-- Quotes may combine DEX pools, RFQ liquidity, multiple hops, and split routes.
-- Same-chain completion depends on block confirmation; cross-chain intent settlement also depends on agents, bridges, and destination-chain finality.
-- Contracts have undergone independent audits and formal verification, but these do not eliminate smart-contract, approval, token, liquidity, or bridge risk.
+- Type: DEX aggregator / intents
+- Networks: Ethereum, BNB Chain, Avalanche, Polygon, Gnosis, Arbitrum, Optimism, Base, Sonic, Unichain
+- Custody: Non-custodial — your wallet signs
+- Costs: Pool fee + network gas + price impact
+- Token in/out: the pair you choose
+- Verify: Check the pool and contract in the live app
 
-## Common questions
-### Is ParaSwap safe?
-It is non-custodial and its current contracts have published security reviews. ParaSwap’s Augustus V6 suffered a vulnerability in 2024, so users should verify the current contract, inspect every signature, limit allowances, and revoke approvals they no longer need.
-
-### Does ParaSwap hold my crypto?
-No. Tokens remain in the connected wallet until an authorized smart contract or settlement flow executes the trade.
-
-### What fees do users pay?
-Costs can include the disclosed interface or partner fee, network gas, liquidity-provider fees embedded in execution, price impact, and cross-chain costs. Delta can abstract gas into the quoted settlement rather than requiring destination-chain gas.
-
-### How long does a swap take?
-A same-chain market swap normally completes after the relevant blockchain confirms it. Cross-chain orders can take longer because execution and finality involve more than one network.
-
-### Which assets can be traded?
-Availability depends on the selected network, accessible liquidity sources, token contracts, and current route support. Token symbols are not unique, so contract addresses should be verified.
-
-### How do I start?
-Use the current official Velora interface, connect a compatible self-custody wallet, select the correct networks and tokens, review the route and minimum received, then approve and sign.
-
-### What are the main risks?
-Primary risks are malicious interfaces, incorrect tokens or networks, excessive approvals, contract exploits, adverse slippage, MEV, illiquid assets, failed transactions, and cross-chain settlement dependencies.
+## On this page
+- [What is ParaSwap?](https://paraswap-app.github.io/#what)
+- [How it works](https://paraswap-app.github.io/#how)
+- [Networks and tokens](https://paraswap-app.github.io/#networks)
+- [Fees and costs](https://paraswap-app.github.io/#fees)
+- [Is ParaSwap safe?](https://paraswap-app.github.io/#safety)
+- [How to swap](https://paraswap-app.github.io/#howto)
+- [Problems and fixes](https://paraswap-app.github.io/#troubleshoot)
+- [FAQ](https://paraswap-app.github.io/#faq)
 
 ## App
-- Dashboard: https://paraswap-app.github.io/
-- App: https://paraswap-app.github.io/dashboard/
+- [ParaSwap dashboard](https://paraswap-app.github.io/)
+- [Open the app](https://paraswap-app.github.io/dashboard/)
 
-## Official resources
-Official website: https://www.velora.xyz/
-Official trading app: https://app.velora.xyz/
-User documentation: https://docs.velora.xyz/
-Developer documentation: https://www.velora.xyz/docs
-Rebrand announcement: https://www.velora.xyz/articles/unveiling-velora-the-next-era-of-paraswap
-Augustus V6.1 security and audits: https://developers.velora.xyz/security/augustus-v6.1
-Official source code: https://github.com/VeloraDEX
-Official X: https://x.com/VeloraDEX
-Help center: https://help.velora.xyz/
-
-## Data & references
-DeFiLlama DEX aggregator data: https://defillama.com/dex-aggregators
-CoinGecko ParaSwap and migration record: https://www.coingecko.com/en/coins/paraswap
-Legacy PSP contract on Etherscan: https://etherscan.io/token/0xcafe001067cdef266afb7eb5a286dcfd277f3de5
-VLR contract on BaseScan: https://basescan.org/token/0x4e107a0000db66f0e9fd2039288bf811dd1f9c74
-ERC-20 standard: https://eips.ethereum.org/EIPS/eip-20
-EIP-712 typed-data standard: https://eips.ethereum.org/EIPS/eip-712
+## Sources
+- [docs.velora.xyz](https://docs.velora.xyz/docs/overview/why-velora)
+- [github.com](https://github.com/VeloraDEX/paraswap-dex-lib)
+- [coingecko.com](https://www.coingecko.com/en/coins/paraswap)
+- [coinmarketcap.com](https://coinmarketcap.com/currencies/paraswap/)
