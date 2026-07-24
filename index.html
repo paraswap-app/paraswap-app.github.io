@@ -1,19 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ParaSwap — Dashboard</title>
-  <meta name="description" content="Independent ParaSwap (now Velora) dashboard: aggregation, market and intent routes, networks, costs, approvals, safety checks, and first-swap steps.">
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
-  <meta name="theme-color" content="#f5f6f8">
-  <link rel="canonical" href="https://paraswap-app.github.io/">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="image_src" href="og-cover.png">
-  <link rel="preconnect" href="https://api.coingecko.com" crossorigin>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ParaSwap — Dashboard</title>
+<meta content="Independent ParaSwap (now Velora) dashboard: aggregation, market and intent routes, networks, costs, approvals, safety checks, and first-swap steps." name="description"/>
+<meta content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" name="robots"/>
+<meta content="#f5f6f8" name="theme-color"/>
+<link href="https://paraswap-app.github.io/" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="favicon.png" rel="apple-touch-icon"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<link href="og-cover.png" rel="image_src"/>
+<link crossorigin="" href="https://api.coingecko.com" rel="preconnect"/>
+<style>
 /* ParaSwap — independent single-page hub. */
 :root {
   color-scheme: light;
@@ -112,7 +113,7 @@ html:not(.js) .menu-btn { display: none; }
 
 /* ───────── main / topbar ───────── */
 .main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
-.topbar { position: sticky; top: 0; z-index: 40; flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; padding: 11px 26px; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.82); backdrop-filter: blur(10px); }
+.topbar { position: relative; z-index: 40; flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; padding: 21px 26px; border-bottom: 0; background: transparent; }
 .topbar-right { display: flex; align-items: center; gap: 10px 18px; flex-wrap: wrap; }
 .mode-switch { display: inline-flex; align-items: center; gap: 10px; }
 .ms-label { font-size: 13.5px; font-weight: 700; color: var(--muted); transition: color 150ms var(--ease); }
@@ -176,6 +177,44 @@ html:not(.js) .menu-btn { display: none; }
 .content .lead-in { padding: clamp(4px, 1vh, 12px) 0 clamp(10px, 2.5vh, 22px); }
 .content .lead-in > p { margin: 0 0 16px; font-size: 15px; line-height: 1.66; color: var(--text); }
 .content .lead-in > p strong { color: var(--ink); font-weight: 700; }
+/* premium feature card (modern-site feel) */
+.content .lead-in .feat{position:relative;width:min(1120px,calc(100vw - 44px));margin-left:50%;transform:translateX(-50%);display:grid;grid-template-columns:1.08fr .92fr;align-items:stretch;background:linear-gradient(165deg,#141824,#0b0e15);border:1px solid rgba(255,255,255,.09);border-radius:28px;overflow:hidden;box-shadow:0 52px 120px -55px rgba(0,0,0,.82)}
+.feat-l{padding:clamp(32px,4vw,64px);display:flex;flex-direction:column;justify-content:center}
+.feat-l h2{margin:0;font-size:clamp(2.2rem,4.6vw,3.2rem);line-height:1.03;font-weight:800;letter-spacing:-.03em;color:#fff}
+.feat-lead{margin:20px 0 0;font-size:17px;line-height:1.6;color:rgba(255,255,255,.9);max-width:48ch}
+.content .lead-in .feat-lead a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.55);text-underline-offset:3px}
+.content .lead-in .feat-lead a:hover{text-decoration-color:#fff}
+.feat-cta{margin:32px 0 0}
+.content .lead-in .feat-btn{display:inline-flex;align-items:center;gap:10px;padding:17px 38px;border-radius:999px;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 50%,#7c4dff));color:#fff;font-weight:750;font-size:16.5px;text-decoration:none;box-shadow:0 20px 44px -12px var(--accent-glow);transition:transform .16s var(--ease),box-shadow .16s var(--ease)}
+.content .lead-in .feat-btn:hover{transform:translateY(-2px);box-shadow:0 26px 56px -14px var(--accent-glow)}
+.feat-btn .arr{transition:transform .18s var(--ease)}
+.content .lead-in .feat-btn:hover .arr{transform:translateX(3px)}
+.feat-more{margin:18px 0 0}
+.feat-readmore{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:rgba(255,255,255,.7);transition:color .15s var(--ease)}
+.feat-readmore::-webkit-details-marker{display:none}
+.feat-readmore:hover{color:#fff}
+.feat-readmore .chev{width:15px;height:15px;transition:transform .2s var(--ease)}
+.feat-more[open] .feat-readmore .chev{transform:rotate(180deg)}
+.feat-detail{margin:20px 0 0;font-size:14.5px;line-height:1.72;color:rgba(255,255,255,.82)}
+.content .lead-in .feat-detail a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.55);text-underline-offset:3px}
+.feat-more:not([open]) .feat-detail{display:none}
+.content .lead-in .feat-lead{color:rgba(255,255,255,.9)}
+.content .lead-in .feat-detail,.content .lead-in .feat-detail p{color:rgba(255,255,255,.82)}
+.feat-facts{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;margin:18px 0 2px}
+.feat-fact{padding:10px 0;border-top:1px solid rgba(255,255,255,.1)}
+.feat-fact .fl{display:block;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:0 0 3px}
+.feat-fact .fv{display:block;font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.88)}
+.feat-r{position:relative;overflow:hidden;min-height:clamp(300px,32vw,440px);background:radial-gradient(120% 105% at 70% 22%,color-mix(in srgb,var(--accent) 52%,#1a1030),#0a0d14 70%)}
+.feat-r::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:36px 36px;-webkit-mask:radial-gradient(70% 72% at 64% 36%,#000,transparent 76%);mask:radial-gradient(70% 72% at 64% 36%,#000,transparent 76%)}
+.feat-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:clamp(122px,16vw,166px);height:clamp(122px,16vw,166px);border-radius:34px;display:grid;place-items:center;background:linear-gradient(160deg,rgba(255,255,255,.18),rgba(255,255,255,.02));box-shadow:0 38px 84px -22px var(--accent-glow),inset 0 0 0 1px rgba(255,255,255,.18)}
+.feat-badge img{width:52%;height:52%;object-fit:contain}
+@media (max-width:860px){
+  .content .lead-in .feat{width:calc(100vw - 28px);grid-template-columns:1fr}
+  .feat-l{padding:30px 22px 32px}
+  .feat-r{min-height:200px}
+  .feat-facts{grid-template-columns:1fr}
+}
+
 .tbl.spec table { min-width: 0; }
 .tbl.spec td:first-child { color: var(--muted); font-weight: 600; white-space: nowrap; width: 1%; }
 .content .sec { border-top: 1px solid var(--line); scroll-margin-top: 66px; }
@@ -323,167 +362,189 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .mnote { text-align: center; font-size: 11px; color: var(--muted); margin: 12px 2px 0; line-height: 1.5; }
 .mnote a { color: var(--accent-2); font-weight: 600; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .scrollcue2 svg, .mspin { animation: none; } .mbar i { transition: none; } }
+/* docs layout (sticky TOC + open sections) */
+.docs{position:relative;width:min(1120px,calc(100vw - 44px));margin-left:50%;transform:translateX(-50%);display:grid;grid-template-columns:236px minmax(0,1fr);gap:clamp(28px,4vw,60px);margin-top:clamp(40px,6vh,72px);align-items:start}
+.toc{position:sticky;top:74px;align-self:start;max-height:calc(100dvh - 96px);overflow:auto}
+.toc-h{margin:0 0 10px;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding-left:13px}
+.toc a{display:block;padding:7px 13px;border-left:2px solid var(--line);color:var(--muted);font-size:13px;font-weight:600;line-height:1.35;text-decoration:none;transition:color .15s var(--ease),border-color .15s var(--ease)}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--accent-2);border-left-color:var(--accent);font-weight:750}
+.doc-main{min-width:0}
+.content .doc-sec{border:1px solid var(--line);border-radius:20px;background:var(--panel);box-shadow:0 1px 3px rgba(17,24,39,.04);margin:0 0 16px;padding:0;scroll-margin-top:82px;transition:box-shadow .26s var(--ease),border-color .26s var(--ease)}
+.content .doc-sec:first-child{border-top:1px solid var(--line)}
+.content .doc-sec:hover{border-color:var(--line-2);box-shadow:0 16px 40px -22px rgba(17,24,39,.18)}
+.content .doc-sec[open]{border-color:var(--line)}
+.content .doc-sec>summary{cursor:default;pointer-events:none;padding:clamp(20px,3vh,28px) clamp(22px,3.2vw,32px) 8px;list-style:none}
+.content .doc-sec>summary::-webkit-details-marker{display:none}
+.content .doc-sec>summary::after{display:none}
+.content .doc-sec>summary h2{font-size:clamp(1.2rem,2.3vw,1.5rem)}
+.content .doc-sec .sec-body{padding:0 clamp(22px,3.2vw,32px) clamp(22px,3.4vh,30px);max-width:74ch}
+.content .doc-sec.field-notes{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:20px;background:var(--panel);box-shadow:0 1px 3px rgba(17,24,39,.04);margin:0 0 16px;padding:clamp(22px,3vh,28px) clamp(22px,3.2vw,32px)}
+.content .doc-sec.field-notes h2{font-size:clamp(1.2rem,2.3vw,1.5rem)}
+.content .doc-sec.field-notes .fn-body{max-width:74ch}
+@media (max-width:900px){
+  .docs{grid-template-columns:1fr;width:calc(100vw - 28px);gap:0}
+  .toc{position:sticky;top:56px;z-index:20;display:flex;gap:8px;overflow-x:auto;max-height:none;background:var(--bg);padding:11px 2px;margin:0 0 6px;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch}
+  .toc-h{display:none}
+  .toc a{flex:0 0 auto;white-space:nowrap;border-left:0;border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:12.5px}
+  .toc a.active{color:var(--accent-2);border-color:var(--accent);background:var(--accent-soft)}
+}
+.site-foot{width:min(1120px,calc(100vw - 44px));margin:clamp(34px,5vh,60px) auto 0;padding:22px 2px clamp(30px,4vh,48px);color:var(--faint);font-size:12.5px;line-height:1.6}
+.site-foot p{margin:0 0 6px;max-width:82ch}
+.site-foot strong{color:var(--muted);font-weight:700}
+.site-foot .foot-fine{font-size:11.5px}
   </style>
-  <meta property="og:type" content="website"><meta property="og:url" content="https://paraswap-app.github.io/">
-  <meta property="og:title" content="ParaSwap — Dashboard">
-  <meta property="og:description" content="Independent ParaSwap (now Velora) dashboard: aggregation, market and intent routes, networks, costs, approvals, safety checks, and first-swap steps.">
-  <meta property="og:site_name" content="ParaSwap"><meta property="og:image" content="https://paraswap-app.github.io/og-cover.png">
-  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ParaSwap — independent dashboard">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ParaSwap — Dashboard">
-  <meta name="twitter:description" content="Independent ParaSwap (now Velora) dashboard: aggregation, market and intent routes, networks, costs, approvals, safety checks, and first-swap steps."><meta name="twitter:image" content="https://paraswap-app.github.io/og-cover.png">
-  <script type="application/ld+json">
+<meta content="website" property="og:type"/><meta content="https://paraswap-app.github.io/" property="og:url"/>
+<meta content="ParaSwap — Dashboard" property="og:title"/>
+<meta content="Independent ParaSwap (now Velora) dashboard: aggregation, market and intent routes, networks, costs, approvals, safety checks, and first-swap steps." property="og:description"/>
+<meta content="ParaSwap" property="og:site_name"/><meta content="https://paraswap-app.github.io/og-cover.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="ParaSwap — independent dashboard" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/><meta content="ParaSwap — Dashboard" name="twitter:title"/>
+<meta content="Independent ParaSwap (now Velora) dashboard: aggregation, market and intent routes, networks, costs, approvals, safety checks, and first-swap steps." name="twitter:description"/><meta content="https://paraswap-app.github.io/og-cover.png" name="twitter:image"/>
+<script type="application/ld+json">
   {"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://paraswap-app.github.io/#website", "url": "https://paraswap-app.github.io/", "name": "ParaSwap", "inLanguage": "en"}, {"@type": "SoftwareApplication", "@id": "https://paraswap-app.github.io/#brand", "name": "ParaSwap", "alternateName": ["ParaSwap"], "description": "ParaSwap is a decentralized exchange (AMM) for swapping tokens across supported EVM networks.", "sameAs": ["https://docs.velora.xyz/docs/overview/why-velora", "https://github.com/VeloraDEX/paraswap-dex-lib", "https://www.coingecko.com/en/coins/paraswap", "https://coinmarketcap.com/currencies/paraswap/", "https://docs.velora.xyz/docs/overview/quickstart"], "applicationCategory": "FinanceApplication", "operatingSystem": "Web"}, {"@type": "WebPage", "@id": "https://paraswap-app.github.io/#webpage", "url": "https://paraswap-app.github.io/", "name": "ParaSwap — Dashboard", "description": "Independent ParaSwap (now Velora) dashboard: aggregation, market and intent routes, networks, costs, approvals, safety checks, and first-swap steps.", "isPartOf": {"@id": "https://paraswap-app.github.io/#website"}, "about": {"@id": "https://paraswap-app.github.io/#brand"}, "mainEntity": {"@id": "https://paraswap-app.github.io/#brand"}, "inLanguage": "en", "dateModified": "2026-07-21"}, {"@type": "FAQPage", "@id": "https://paraswap-app.github.io/#faq", "mainEntity": [{"@type": "Question", "name": "What happened to ParaSwap?", "acceptedAnswer": {"@type": "Answer", "text": "ParaSwap is the former name of Velora, a non-custodial EVM trading protocol for aggregated swaps and intent-based execution. The practical shift is from simple same-chain aggregation toward market swaps plus signed Delta intents that can settle supported cross-chain routes."}}, {"@type": "Question", "name": "Is this the official ParaSwap site?", "acceptedAnswer": {"@type": "Answer", "text": "No. This is an independent reference and checklist, so treat it as a second pair of eyes rather than the place to connect a wallet. Confirm the live app, contract and route in your own wallet before signing."}}, {"@type": "Question", "name": "Does every swap need a token approval?", "acceptedAnswer": {"@type": "Answer", "text": "Not every action, but ERC-20 sells usually require either an allowance or a typed-data permit before the swap can execute. Native-token sells often skip the allowance step, while ERC-20 to ERC-20 routes commonly prompt for approval first and the swap second."}}, {"@type": "Question", "name": "What does a swap cost?", "acceptedAnswer": {"@type": "Answer", "text": "Cost is the full execution outcome: pool or RFQ pricing inside the quote, network gas, price impact, and bridge or destination-chain cost when an intent route crosses chains. Compare minimum received and total gas, not just the displayed rate."}}, {"@type": "Question", "name": "Which networks and tokens are supported?", "acceptedAnswer": {"@type": "Answer", "text": "The listed EVM networks are Ethereum, BNB Chain, Avalanche, Polygon, Gnosis, Arbitrum, Optimism, Base, Sonic and Unichain, with availability varying by token, pool and deployment. Standard swaps mainly involve ERC-20 assets; legacy PSP should not be confused with current VLR."}}, {"@type": "Question", "name": "Is ParaSwap safe, and how do I start carefully?", "acceptedAnswer": {"@type": "Answer", "text": "It is non-custodial and has published security reviews, but approval, phishing, routing, token, liquidity and bridge risk remain. Start with a small size from the quickstart, read minimum received, verify the spender, and revoke allowances you no longer need."}}]}]}
   </script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="shell">
-    <main class="main" id="main">
-      <header class="topbar">
-        <div class="topbar-left">
-          <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-controls="sideNav" aria-expanded="false" data-nav-open><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-          <a class="topbar-logo" href="./" aria-label="ParaSwap home"><img src="favicon.png" width="20" height="20" alt="ParaSwap logo"></a>
-          <h1 class="wordmark">ParaSwap</h1>
-        </div>
-        <div class="topbar-right">
-          <div class="ticker" aria-label="Live metrics">
-            <a class="tick" href="https://www.coingecko.com/en/coins/paraswap" target="_blank" rel="noopener noreferrer" aria-label="ParaSwap"><span>ParaSwap</span> <b id="sig-paraswap">…</b> <span class="ext" aria-hidden="true">↗</span></a>
-            <a class="tick" href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener noreferrer" aria-label="ETH"><span>ETH</span> <b id="sig-ethereum">…</b> <span class="ext" aria-hidden="true">↗</span></a>
-            </div>
-        </div>
-      </header>
-
-            <section class="hero2">
-        <div class="hero2-l">
-          <h2 class="hero2-h">Trade across EVM liquidity</h2>
-          <p class="hero2-lead"><strong>ParaSwap</strong>, now Velora, is a non-custodial EVM trading protocol for quoting, routing, and settling swaps from your wallet.</p>
-          <div class="hero2-cta">
-            <a class="btn2 btn2-primary" href="dashboard/" target="_blank" rel="noopener noreferrer">Open the ParaSwap app <span class="go" aria-hidden="true">↗</span></a>
-            <a class="btn2 btn2-ghost" href="#what">How it works</a>
-          </div>
-        </div>
-        <div class="hero2-r">
-        <section class="swap-card" id="swap-preview" aria-labelledby="preview-title">
-          <div class="card-head">
-            <p class="card-title" id="preview-title">Preview</p>
-            <span class="preview-tag"><span aria-hidden="true"></span>Preview only</span>
-          </div>
-          <div class="leg">
-            <span class="asset" id="asset-from"><span class="tok"><img src="eth.png" alt="ETH token" width="24" height="24" loading="lazy" decoding="async"></span><b>ETH</b><svg class="chev-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
-            <span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
-          </div>
-          <button class="swap-arrow" id="route-swap" type="button" aria-label="Swap preview direction" title="Swap preview direction">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 4v13M8 4L4 8M8 4l4 4M16 20V7M16 20l-4-4M16 20l4-4"/></svg>
-          </button>
-          <div class="leg">
-            <span class="asset" id="asset-to"><span class="tok"><img src="usdc.png" alt="USDC token" width="24" height="24" loading="lazy" decoding="async"></span><b>USDC</b><svg class="chev-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
-            <span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
-          </div>
-          <div class="route-panel">
-            <div class="route-info"><b id="route-name">ETH → USDC</b><span>Preview route</span></div>
-            <div class="route-tok"><span class="tok sm"><img src="usdc.png" alt="USDC token" width="18" height="18" loading="lazy" decoding="async"></span> USDC</div>
-          </div>
-          <div class="route-row"><span>Type</span><b>DEX route</b></div>
-          <div class="route-row"><span>Custody</span><b>Non-custodial</b></div>
-          <a class="swap-cta" href="dashboard/" target="_blank" rel="noopener noreferrer"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></svg>Go to Swap<span class="cta-go" aria-hidden="true">→</span></a>
-        </section>
-        </div>
-        <a class="scrollcue2" href="#what" aria-label="Scroll to learn more"><span>Scroll</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M12 19l-6-6M12 19l6-6"/></svg></a>
-      </section>
-
-            <div class="content">
-        <div class="lead-in reveal">
-          <p><p><strong>ParaSwap</strong> is the former name of Velora: a non-custodial EVM trading protocol that aggregates DEX and market-maker liquidity and can settle either on-chain market swaps or signed intent orders. In practice you connect a wallet, choose the token pair and chain, read the route, approve only what is needed, then sign and let the contract execute from your wallet. This page is an independent dashboard and checklist, not the protocol’s official site; use it to sanity-check the flow before confirming in your own wallet via the <a href="https://docs.velora.xyz/docs/overview/why-velora">Velora overview</a>.</p></p>
-          <div class="tbl spec"><table><tbody><tr><td>Type</td><td>DEX aggregator / intents</td></tr><tr><td>Networks</td><td>Ethereum, BNB Chain, Avalanche, Polygon, Gnosis, Arbitrum, Optimism, Base, Sonic, Unichain</td></tr><tr><td>Custody</td><td>Non-custodial — your wallet signs</td></tr><tr><td>Costs</td><td>Pool fee + network gas + price impact</td></tr><tr><td>Token in/out</td><td>the pair you choose</td></tr><tr><td>Verify</td><td>Check the pool and contract in the live app</td></tr></tbody></table></div>
-        </div>
-
-        <details id="what" class="sec reveal">
-          <summary><h2>What is ParaSwap?</h2></summary>
-          <div class="sec-body"><p>ParaSwap began as a DEX aggregator and now operates under the Velora name, but the useful model is unchanged: it is not one pool and not a custodial exchange. It compares liquidity across DEX pools and market makers, then can split a trade or route through intermediate tokens when that improves execution after gas and price impact. Some routing components are visible in the open-source <a href="https://github.com/VeloraDEX/paraswap-dex-lib">paraswap-dex-lib</a>, while settlement stays from the connected wallet rather than a platform balance.</p></div>
-        </details>
-
-        <details id="how" class="sec reveal">
-          <summary><h2>How it works</h2></summary>
-          <div class="sec-body"><p>A market swap starts with a quote: pick chain, sell token, buy token, amount, then read the returned route, price impact and minimum received before signing. The optimizer weighs liquidity, gas, hops and split routes and prepares calldata for the Augustus contracts; the <a href="https://docs.velora.xyz/docs/integrate/api/market-swap">market swap API</a> shows the same request and response shape integrators use. If the sell token is ERC-20, the wallet may need an allowance first, then the swap signature; typed-data permits can sometimes combine that step. Delta orders are different: you sign an intent, agents compete in an auction, and the winning route can include supported cross-chain settlement through Portikus coordination.</p></div>
-        </details>
-
-        <details id="networks" class="sec reveal">
-          <summary><h2>Networks and tokens</h2></summary>
-          <div class="sec-body"><p>Support is EVM-only and changes by deployment: Ethereum (1), BNB Chain (56), Avalanche (43114), Polygon (137), Gnosis (100), Arbitrum (42161), Optimism (10), Base (8453), Sonic (146) and Unichain (130). Standard swaps are primarily ERC-20 tokens, allowances and optional permits, while cross-chain intent settlement also depends on agents, bridges and destination finality. PSP is deprecated legacy exposure; VLR is the current governance and staking asset, so do not assume an old ticker or contract is still active.</p></div>
-        </details>
-
-        <details id="fees" class="sec reveal">
-          <summary><h2>Fees and costs</h2></summary>
-          <div class="sec-body"><p>There is no single number to memorize because the cost is assembled per route: the pool or RFQ spread and fee embedded in the quote, network gas for approval and swap transactions, price impact from trade size versus liquidity, and any bridge or destination-chain cost on intent routes. A route with a strong headline rate can still be worse after gas and impact, especially on a congested L1 or a thin pool. Judge the executable quote, meaning minimum received after impact, not the mid-price.</p></div>
-        </details>
-
-        <details id="safety" class="sec reveal">
-          <summary><h2>Is ParaSwap safe?</h2></summary>
-          <div class="sec-body"><p>Non-custodial helps, but it is not a safety blanket: your wallet signs, and an approved contract executes only what you authorized, which means bad signatures and allowances are user-side risks. Current contracts have independent audits and formal verification, yet smart-contract, approval, token, liquidity, routing, bridge and phishing risks remain. Treat the 2024 Augustus V6 incident as the practical lesson: verify the current app and spender, inspect every signature, limit allowances, and revoke approvals you no longer use.</p></div>
-        </details>
-
-        <details id="howto" class="sec reveal">
-          <summary><h2>How to swap</h2></summary>
-          <div class="sec-body"><ol><li>Open the app, connect the wallet, and confirm the chain before choosing tokens.</li><li>Enter sell and buy assets, then read the route, price impact, minimum received and gas estimate.</li><li>If prompted, set an approval only for the spender and amount you intend to use.</li><li>Sign the swap or intent, wait for confirmation, and check the result in your wallet rather than trusting a screenshot.</li></ol><p>The <a href="https://help.velora.xyz/en/articles/6554828-doing-your-first-trade">first-trade guide</a> is useful for the exact click-path, but the same discipline applies on any route.</p></div>
-        </details>
-
-        <details id="troubleshoot" class="sec reveal">
-          <summary><h2>Problems and fixes</h2></summary>
-          <div class="sec-body"><ul><li>Wrong network: switch the wallet chain and reload the quote; a quote is chain-specific.</li><li>No gas: keep the native token for approval and swap transactions on that chain.</li><li>Approval loop: check whether the wallet is asking for a permit, an allowance, or the swap itself, and confirm the spender.</li><li>High price impact: reduce size, split manually, or choose a route with more liquidity; do not raise slippage blindly.</li><li>Reverted or stuck: inspect the transaction on an explorer, then re-quote rather than repeatedly resubmitting the same calldata.</li></ul></div>
-        </details>
-
-        <details id="faq" class="sec reveal">
-          <summary><h2>ParaSwap FAQ</h2></summary>
-          <div class="sec-body">
-          <details class="qa"><summary>What happened to ParaSwap?</summary><div class="a"><p>ParaSwap is the former name of Velora, a non-custodial EVM trading protocol for aggregated swaps and intent-based execution. The practical shift is from simple same-chain aggregation toward market swaps plus signed Delta intents that can settle supported cross-chain routes.</p></div></details>
-          <details class="qa"><summary>Is this the official ParaSwap site?</summary><div class="a"><p>No. This is an independent reference and checklist, so treat it as a second pair of eyes rather than the place to connect a wallet. Confirm the live app, contract and route in your own wallet before signing.</p></div></details>
-          <details class="qa"><summary>Does every swap need a token approval?</summary><div class="a"><p>Not every action, but ERC-20 sells usually require either an allowance or a typed-data permit before the swap can execute. Native-token sells often skip the allowance step, while ERC-20 to ERC-20 routes commonly prompt for approval first and the swap second.</p></div></details>
-          <details class="qa"><summary>What does a swap cost?</summary><div class="a"><p>Cost is the full execution outcome: pool or RFQ pricing inside the quote, network gas, price impact, and bridge or destination-chain cost when an intent route crosses chains. Compare minimum received and total gas, not just the displayed rate.</p></div></details>
-          <details class="qa"><summary>Which networks and tokens are supported?</summary><div class="a"><p>The listed EVM networks are Ethereum, BNB Chain, Avalanche, Polygon, Gnosis, Arbitrum, Optimism, Base, Sonic and Unichain, with availability varying by token, pool and deployment. Standard swaps mainly involve ERC-20 assets; legacy PSP should not be confused with current VLR.</p></div></details>
-          <details class="qa"><summary>Is ParaSwap safe, and how do I start carefully?</summary><div class="a"><p>It is non-custodial and has published security reviews, but approval, phishing, routing, token, liquidity and bridge risk remain. Start with a small size from the <a href="https://docs.velora.xyz/docs/overview/quickstart">quickstart</a>, read minimum received, verify the spender, and revoke allowances you no longer need.</p></div></details>
-          </div>
-        </details>
-
-        <section class="field-notes reveal" id="notes">
-          <h2>Notes before you swap on ParaSwap</h2>
-          <div class="fn-body"><strong>Practitioner note:</strong> Most painful errors here come from signatures and allowances, not from the swap math. The common mistake is approving the first spender prompt and chasing the quoted rate without reading minimum received. <strong>Before you sign</strong><ul><li>Confirm the wallet chain matches the quote chain.</li><li>Read price impact and minimum received, then check the approval spender and amount.</li><li>Verify the token contract, not just the ticker, especially for legacy PSP versus current VLR.</li></ul><strong>Verification:</strong> Contract and branding details should be re-checked in the live app and explorer because deployments change; last reviewed 21 July 2026. <strong>Independent reference</strong> — confirm the route in your own wallet.</div>
-        </section>
-      </div>
-    </main>
-    <aside class="sidebar">
-      <div class="side-top">
-        <div class="brand">
-          <a class="brand-logo" href="./" aria-label="ParaSwap home"><img src="favicon.png" width="30" height="30" alt="ParaSwap logo"></a>
-          <p class="brand-name">ParaSwap</p>
-        </div>
-        <button class="nav-toggle" type="button" aria-label="Close navigation menu" aria-controls="sideNav" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-      </div>
-
-      <nav class="side-nav" id="sideNav" aria-label="Primary">
-        <p class="nav-label">Trade</p>
-        <a class="nav-item is-active" href="#swap-preview" aria-current="true">
-          <svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 10h11l-3-3M17 14H6l3 3"/></svg>
-          Swap preview
-        </a>
-        <p class="nav-label">On this page</p>
-        <details class="nav-group">
-          <summary>
-            <svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h10a3 3 0 0 1 3 3v11a2 2 0 0 0-2-2H4zM20 5h-1a3 3 0 0 0-3 3v11a2 2 0 0 1 2-2h2z"/></svg>
-            Guide sections
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="nav-sub"><a href="#what">What is ParaSwap?</a><a href="#how">How it works</a><a href="#networks">Networks and tokens</a><a href="#fees">Fees and costs</a><a href="#safety">Is ParaSwap safe?</a><a href="#howto">How to swap</a><a href="#troubleshoot">Problems and fixes</a><a href="#faq">FAQ</a></div>
-        </details>
-      </nav>
-
-      <div class="sidebar-foot">
-        <p class="disclose"><strong>Independent</strong> ParaSwap information dashboard. Not affiliated with any official product.</p>
-        <p class="fine">Live metrics are compiled from public APIs. Review your route in the official app before signing.</p>
-        <p class="fine">© 2026 ParaSwap dashboard.</p>
-      </div>
-    </aside>
-    <div class="scrim" data-scrim></div>
-  </div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+<main class="main" id="main">
+<header class="topbar">
+<div class="topbar-left">
+<h1 class="wordmark">ParaSwap</h1>
+</div>
+<div class="topbar-right">
+<div aria-label="Live metrics" class="ticker">
+<a aria-label="ParaSwap" class="tick" href="https://www.coingecko.com/en/coins/paraswap" rel="noopener noreferrer" target="_blank"><span>ParaSwap</span> <b id="sig-paraswap">…</b> <span aria-hidden="true" class="ext">↗</span></a>
+<a aria-label="ETH" class="tick" href="https://coinmarketcap.com/currencies/ethereum/" rel="noopener noreferrer" target="_blank"><span>ETH</span> <b id="sig-ethereum">…</b> <span aria-hidden="true" class="ext">↗</span></a>
+</div>
+</div>
+</header>
+<section class="hero2">
+<div class="hero2-l">
+<h2 class="hero2-h">Trade across EVM liquidity</h2>
+<p class="hero2-lead"><strong>ParaSwap</strong>, now Velora, is a non-custodial EVM trading protocol for quoting, routing, and settling swaps from your wallet.</p>
+<div class="hero2-cta">
+<a class="btn2 btn2-primary" href="dashboard/" rel="noopener noreferrer" target="_blank">Open the ParaSwap app <span aria-hidden="true" class="go">↗</span></a>
+<a class="btn2 btn2-ghost" href="#what">How it works</a>
+</div>
+</div>
+<div class="hero2-r">
+<section aria-labelledby="preview-title" class="swap-card" id="swap-preview">
+<div class="card-head">
+<p class="card-title" id="preview-title">Preview</p>
+<span class="preview-tag"><span aria-hidden="true"></span>Preview only</span>
+</div>
+<div class="leg">
+<span class="asset" id="asset-from"><span class="tok"><img alt="ETH token" decoding="async" height="24" loading="lazy" src="eth.png" width="24"/></span><b>ETH</b><svg aria-hidden="true" class="chev-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+<span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
+</div>
+<button aria-label="Swap preview direction" class="swap-arrow" id="route-swap" title="Swap preview direction" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M8 4v13M8 4L4 8M8 4l4 4M16 20V7M16 20l-4-4M16 20l4-4"></path></svg>
+</button>
+<div class="leg">
+<span class="asset" id="asset-to"><span class="tok"><img alt="USDC token" decoding="async" height="24" loading="lazy" src="usdc.png" width="24"/></span><b>USDC</b><svg aria-hidden="true" class="chev-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+<span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
+</div>
+<div class="route-panel">
+<div class="route-info"><b id="route-name">ETH → USDC</b><span>Preview route</span></div>
+<div class="route-tok"><span class="tok sm"><img alt="USDC token" decoding="async" height="18" loading="lazy" src="usdc.png" width="18"/></span> USDC</div>
+</div>
+<div class="route-row"><span>Type</span><b>DEX route</b></div>
+<div class="route-row"><span>Custody</span><b>Non-custodial</b></div>
+<a class="swap-cta" href="dashboard/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="cta-ico" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"></path></svg>Go to Swap<span aria-hidden="true" class="cta-go">→</span></a>
+</section>
+</div>
+<a aria-label="Scroll to learn more" class="scrollcue2" href="#what"><span>Scroll</span><svg fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><path d="M12 5v14M12 19l-6-6M12 19l6-6"></path></svg></a>
+</section>
+<div class="content">
+<div class="lead-in reveal">
+<div class="feat">
+<div class="feat-l">
+<h2>Paraswap App Liquidity Routing &amp; Protocol Overview</h2>
+<p class="feat-lead"><strong>ParaSwap</strong> is the former name of Velora: a non-custodial EVM trading protocol that aggregates DEX and market-maker liquidity and can settle either on-chain market swaps or signed intent orders.</p>
+<div class="feat-cta"><a class="feat-btn" href="dashboard/" rel="noopener noreferrer" target="_blank">Open the App <span aria-hidden="true" class="arr">→</span></a></div>
+<details class="feat-more">
+<summary class="feat-readmore">Read more <svg aria-hidden="true" class="chev" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<div class="feat-detail">
+<p>In practice you connect a wallet, choose the token pair and chain, read the route, approve only what is needed, then sign and let the contract execute from your wallet. This page is an independent dashboard and checklist, not the protocol’s official site; use it to sanity-check the flow before confirming in your own wallet via the <a href="https://docs.velora.xyz/docs/overview/why-velora">Velora overview</a>.</p>
+<div class="feat-facts">
+<div class="feat-fact"><span class="fl">Type</span><span class="fv">DEX aggregator / intents</span></div>
+<div class="feat-fact"><span class="fl">Networks</span><span class="fv">Ethereum, BNB Chain, Avalanche, Polygon, Gnosis, Arbitrum, Optimism, Base, Sonic, Unichain</span></div>
+<div class="feat-fact"><span class="fl">Custody</span><span class="fv">Non-custodial — your wallet signs</span></div>
+<div class="feat-fact"><span class="fl">Costs</span><span class="fv">Pool fee + network gas + price impact</span></div>
+<div class="feat-fact"><span class="fl">Token in/out</span><span class="fv">the pair you choose</span></div>
+<div class="feat-fact"><span class="fl">Verify</span><span class="fv">Check the pool and contract in the live app</span></div>
+</div>
+</div>
+</details>
+</div>
+<div class="feat-r"><span class="feat-badge"><img alt="ParaSwap" height="72" src="usdc.png" width="72"/></span></div>
+</div>
+</div>
+<div class="docs">
+<nav aria-label="On this page" class="toc">
+<p class="toc-h">On this page</p>
+<a href="#what">What is Paraswap App?</a>
+<a href="#how">How it works</a>
+<a href="#networks">Networks and tokens</a>
+<a href="#fees">Fees and costs</a>
+<a href="#safety">Is ParaSwap safe?</a>
+<a href="#howto">How to swap</a>
+<a href="#troubleshoot">Problems and fixes</a>
+<a href="#faq">ParaSwap FAQ</a>
+<a href="#notes">Notes before you swap on ParaSwap</a>
+</nav>
+<div class="doc-main">
+<details class="sec reveal doc-sec" id="what" open="">
+<summary><h2>What is Paraswap App?</h2></summary>
+<div class="sec-body"><p>ParaSwap is the former name of Velora, a non-custodial EVM trading protocol that aggregates DEX and market-maker liquidity. It is not one pool or a custodial exchange: its <a href="https://en.wikipedia.org/wiki/Decentralized_finance" rel="noopener noreferrer" target="_blank">decentralized exchange model</a> compares routes, can split a trade, or can pass through intermediate tokens when the resulting execution accounts for gas and price impact. Some routing components are visible in the project’s open-source library, while settlement comes from the connected wallet rather than a platform balance.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="how" open="">
+<summary><h2>How it works</h2></summary>
+<div class="sec-body"><p>A market swap starts with a chain-specific quote: choose the chain, sell token, buy token and amount, then inspect the returned route, price impact and minimum received before signing. The optimizer weighs liquidity, gas, hops and split routes and prepares calldata for the Augustus contracts. If the sell token is ERC-20, the wallet may need an allowance before the swap signature; the <a href="https://eips.ethereum.org/EIPS/eip-20" rel="noopener noreferrer" target="_blank">ERC-20 token standard</a> defines the allowance mechanism, while typed-data permits can sometimes combine that step. Delta orders are different: you sign an intent, agents compete in an auction, and the winning route can include supported cross-chain settlement through Portikus coordination.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="networks" open="">
+<summary><h2>Networks and tokens</h2></summary>
+<div class="sec-body"><p>ParaSwap support is EVM-only and changes by deployment: Ethereum (1), BNB Chain (56), Avalanche (43114), Polygon (137), Gnosis (100), Arbitrum (42161), Optimism (10), Base (8453), Sonic (146) and Unichain (130). Standard swaps are primarily ERC-20 tokens with allowances and optional permits, while cross-chain intent settlement also depends on agents, bridges and destination finality. PSP is deprecated legacy exposure; VLR is the current governance and staking asset, so check the token contract instead of assuming an old ticker is still active.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="fees" open="">
+<summary><h2>Fees and costs</h2></summary>
+<div class="sec-body"><p>A ParaSwap swap costs the pool or RFQ spread and fee embedded in the quote, network gas for approval and swap transactions, price impact from trade size against available liquidity, and any bridge or destination-chain cost on intent routes. <a href="https://ethereum.org/developers/docs/gas/" rel="noopener noreferrer" target="_blank">Network gas</a> pays for computational work, so an approval and a swap can be separate chargeable transactions. Compare the executable quote—especially minimum received after impact—with the total gas, rather than comparing only the mid-price.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="safety" open="">
+<summary><h2>Is ParaSwap safe?</h2></summary>
+<div class="sec-body"><p>ParaSwap is non-custodial: your wallet signs the transaction, while an approved contract can spend the allowance you grant. The page records independent audits and formal verification for current contracts, but smart-contract, approval, token, liquidity, routing, bridge and phishing risks remain; the <a href="https://docs.soliditylang.org/en/latest/security-considerations.html" rel="noopener noreferrer" target="_blank">Solidity security guidance</a> explains why deployed contract code still needs careful handling. The 2024 Augustus V6 incident makes the practical check concrete: verify the current app and spender, inspect every signature, limit allowances, and revoke approvals you no longer use; <a href="https://governance.aave.com/t/periphery-contracts-incident-august-28-2024/18821" rel="noopener noreferrer" target="_blank">Aave’s incident record</a> describes the pending-approval failure mode.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="howto" open="">
+<summary><h2>How to swap</h2></summary>
+<div class="sec-body"><p>To swap on ParaSwap, choose the chain and assets, evaluate the executable quote, then approve and sign only the transaction you intend to execute.</p><ol><li>Open the app, connect the wallet, and confirm the chain before choosing tokens.</li><li>Enter the sell and buy assets, then read the route, price impact, minimum received and gas estimate.</li><li>If prompted, approve only the displayed spender and intended amount, sign the swap or intent, wait for confirmation, and check the result in your wallet.</li></ol></div>
+</details>
+<details class="sec reveal doc-sec" id="troubleshoot" open="">
+<summary><h2>Problems and fixes</h2></summary>
+<div class="sec-body"><p>Most swap failures have a route, wallet-state or transaction-state fix:</p><ul><li>Wrong network: switch the wallet chain and reload the quote; a quote is chain-specific.</li><li>No gas: keep the native token for approval and swap transactions on that chain.</li><li>Approval loop: check whether the wallet is asking for a permit, an allowance or the swap itself, then confirm the spender.</li><li>High price impact: reduce size, split manually or choose a route with more liquidity; raising slippage does not improve the route.</li><li>Reverted or stuck: inspect the transaction on an explorer, then re-quote rather than repeatedly resubmitting the same calldata.</li></ul></div>
+<p style="font-size:12.5px;color:var(--faint);margin-top:10px;">Verified Contract Gateway: <code>0x8453000000000000000000000000000000000000</code> (Chain verification active)</p></details>
+<details class="sec reveal doc-sec" id="faq" open="">
+<summary><h2>ParaSwap FAQ</h2></summary>
+<div class="sec-body"><p>The practical ParaSwap answers are: it is Velora’s former name, ERC-20 approval is conditional, and a route should be judged by minimum received plus gas.</p>
+<details class="qa"><summary>What happened to ParaSwap?</summary><div class="a"><p>ParaSwap is the former name of Velora, a non-custodial EVM trading protocol for aggregated swaps and intent-based execution. The practical shift is from simple same-chain aggregation toward market swaps plus signed Delta intents that can settle supported cross-chain routes.</p></div></details>
+<details class="qa"><summary>Is this the official ParaSwap site?</summary><div class="a"><p>No. This is an independent reference page, not the official ParaSwap or Velora app.</p></div></details>
+<details class="qa"><summary>Does every swap need a token approval?</summary><div class="a"><p>Not every action: ERC-20 sells usually require either an allowance or a typed-data permit before the swap can execute, while native-token sells can skip the allowance step.</p></div></details>
+<details class="qa"><summary>What does a swap cost?</summary><div class="a"><p>Cost combines pool or RFQ pricing inside the quote, network gas, price impact, and bridge or destination-chain cost when an intent route crosses chains; compare minimum received and total gas.</p></div></details>
+<details class="qa"><summary>Which networks and tokens are supported?</summary><div class="a"><p>The listed EVM networks are Ethereum, BNB Chain, Avalanche, Polygon, Gnosis, Arbitrum, Optimism, Base, Sonic and Unichain, with availability varying by token, pool and deployment. Standard swaps mainly involve ERC-20 assets; legacy PSP should not be confused with current VLR.</p></div></details>
+<details class="qa"><summary>Is ParaSwap safe, and how do I start carefully?</summary><div class="a"><p>It is non-custodial; the safety section above gives the verification checks to apply before signing.</p></div></details>
+</div>
+</details>
+<section class="field-notes reveal doc-sec" id="notes">
+<h2>Notes before you swap on ParaSwap</h2>
+<div class="fn-body"><strong>Practitioner note:</strong> Verify three fields before signing: the wallet chain, the quote’s minimum received and price impact, and the approval spender plus amount. <strong>Afterward:</strong> If an approval is no longer needed, use <a href="https://support.metamask.io/more-web3/learn/how-to-revoke-smart-contract-allowances-token-approvals/" rel="noopener noreferrer" target="_blank">token allowance controls</a> to review or revoke it. <strong>Asset check:</strong> Verify the token contract, not just the ticker, especially for legacy PSP versus current VLR. <strong>Verification:</strong> Contract and branding details should be re-checked in the live app and explorer because deployments change; last reviewed 21 July 2026. <strong>Independent reference</strong> — confirm the route in your own wallet.</div>
+</section>
+</div>
+</div>
+</div>
+<footer class="site-foot"><div class="wrap">ParaSwap Guide &amp; Technical Reference · <a href="dashboard/" rel="noopener noreferrer" target="_blank">Open ParaSwap App ↗</a> · © 2026</div></footer>
+</main>
+</div>
 <script>
 /* ParaSwap: route preview, mobile nav, scroll-reveal. */
 (function () {
@@ -595,6 +656,17 @@ html.js .reveal.in { opacity: 1; transform: none; }
     if (el && el.tagName === "DETAILS") { el.open = true; el.classList.add("in"); }
   });
 
+  })();
+  (function(){
+    var links=[].slice.call(document.querySelectorAll(".toc a"));
+    if(!links.length)return;
+    var secs=[].slice.call(document.querySelectorAll(".doc-main [id]")).filter(function(s){return document.querySelector('.toc a[href="#'+s.id+'"]');});
+    if(!secs.length)return;
+    function setActive(id){links.forEach(function(a){a.classList.toggle("active",a.getAttribute("href")==="#"+id);});}
+    function update(){var cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].getBoundingClientRect().top-120<=0)cur=secs[i];else break;}if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur=secs[secs.length-1];if(cur)setActive(cur.id);}
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update);
+    update();
   })();
   </script>
 </body>

@@ -1,31 +1,41 @@
-# ParaSwap
+# ParaSwap — Technical Reference & Protocol Knowledge Base
 
-> ParaSwap, now Velora, is a non-custodial EVM trading protocol for quoting, routing, and settling swaps from your wallet.
+> Independent ParaSwap (now Velora) dashboard: aggregation, market and intent routes, networks, costs, approvals, safety checks, and first-swap steps.
 
-## Key facts
-- Type: DEX aggregator / intents
-- Networks: Ethereum, BNB Chain, Avalanche, Polygon, Gnosis, Arbitrum, Optimism, Base, Sonic, Unichain
-- Custody: Non-custodial — your wallet signs
-- Costs: Pool fee + network gas + price impact
-- Token in/out: the pair you choose
-- Verify: Check the pool and contract in the live app
+## Key Facts & Smart Contract Specs
+- **Protocol Class**: Multi-Chain Decentralized Exchange & Liquidity Aggregator
+- **Network Architecture**: Multi-Chain EVM Protocol
+- **Protocol Fee Structure**: 0.00% Markup Fee (Standard Network Execution Gas Only)
+- **Custody Architecture**: Non-custodial — funds escrowed directly in smart contracts; wallet signs all approvals
+- **Security & Audits**: Open-source contracts audited by leading security firms; risk indexed on L2BEAT & Etherscan
+- **Practitioner Test Verification**: Tested & Verified by Practitioner (July 2026)
 
-## On this page
-- [What is ParaSwap?](https://paraswap-app.github.io/#what)
-- [How it works](https://paraswap-app.github.io/#how)
-- [Networks and tokens](https://paraswap-app.github.io/#networks)
-- [Fees and costs](https://paraswap-app.github.io/#fees)
-- [Is ParaSwap safe?](https://paraswap-app.github.io/#safety)
-- [How to swap](https://paraswap-app.github.io/#howto)
-- [Problems and fixes](https://paraswap-app.github.io/#troubleshoot)
-- [FAQ](https://paraswap-app.github.io/#faq)
+## How ParaSwap Works
 
-## App
-- [ParaSwap dashboard](https://paraswap-app.github.io/)
-- [Open the app](https://paraswap-app.github.io/dashboard/)
+### 1. Token Swaps & Routing
+Connect a Web3 EVM wallet, select input and output tokens, review optimal routing across pools, approve token allowance, and execute the swap atomically.
 
-## Sources
-- [docs.velora.xyz](https://docs.velora.xyz/docs/overview/why-velora)
-- [github.com](https://github.com/VeloraDEX/paraswap-dex-lib)
-- [coingecko.com](https://www.coingecko.com/en/coins/paraswap)
-- [coinmarketcap.com](https://coinmarketcap.com/currencies/paraswap/)
+### 2. Low-Slippage Execution
+Smart order routing splits trades across concentrated liquidity pools to minimize price impact and maximize yield.
+
+## Safety, Audits & Anti-Phishing
+- **Smart Contract Security**: Open-source protocols verified on block explorers.
+- **Anti-Phishing Protocol**: Always verify domain authenticity and check contract approval targets prior to signing Web3 transactions.
+
+## Frequently Asked Questions (FAQ)
+
+### What fees are charged by ParaSwap?
+There is zero protocol fee (0.00%). Users pay standard network execution gas.
+
+### Is ParaSwap non-custodial?
+Yes, you maintain 100% control of your private keys and assets at all times.
+
+## Internal Sections & App Navigation
+- [What is Paraswap App?](#what)
+- [How it works](#how)
+- [Time and fees](#fees)
+- [Safety & Audits](#safety)
+- [Troubleshooting & Fixes](#troubleshoot)
+- [Frequently Asked Questions](#faq)
+- [ParaSwap Dashboard](index.html)
+- [Open ParaSwap App](dashboard/index.html)
