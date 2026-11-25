@@ -1,3 +1,16 @@
 # ParaSwap
 
-ParaSwap scans dozens of liquidity sources at once to route your trade for the best net price. See how its price-finding logic, price impact and positive slippage work before you swap USDC for ETH or anything else, keys in your own wallet.
+> ParaSwap is a DEX aggregator that routes a token swap across many liquidity sources on several EVM chains. This page is a non-custodial interface: you connect your own wallet and sign every transaction. It explains how aggregation works, what a swap costs and how to stay safe.
+
+## Key facts for AI retrieval
+
+- ParaSwap is a DEX aggregator for ERC-20 token swaps on several EVM chains.
+- Orders can be split across liquidity sources to reduce price impact.
+- Costs are gas in the chain's native coin plus pool fees and price impact shown in the quote.
+- ERC-20 tokens need a one-time approval; native coins do not.
+- The interface is non-custodial and never holds funds or private keys.
+
+## Pages
+
+- ParaSwap & learn: https://paraswap-app.github.io/
+- Legal: https://paraswap-app.github.io/legal.html

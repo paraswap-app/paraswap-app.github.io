@@ -1,0 +1,1 @@
+{"name":"ParaSwap","short_name":"ParaSwap","description":"Swap tokens with ParaSwap, a DEX aggregator that splits your order across many liquidity sources on EVM chains. Non-custodial, signed from your own wallet.","start_url":"/","display":"standalone","background_color":"#f6f5f4","theme_color":"#f6f5f4","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]}

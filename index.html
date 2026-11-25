@@ -1,249 +1,250 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ParaSwap — DEX Aggregator for the Best Swap Price</title>
-<meta name="description" content="ParaSwap scans dozens of liquidity sources at once to route your trade for the best net price. See how its price-finding logic, price impact and positive slippage work before you swap USDC for ETH or anything else, keys in your own wallet.">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ParaSwap — DEX Aggregator Across EVM Chains</title>
+<meta name="description" content="Swap tokens with ParaSwap, a DEX aggregator that splits your order across many liquidity sources on EVM chains. Non-custodial, signed from your own wallet.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#f6f5f4">
 <link rel="canonical" href="https://paraswap-app.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ParaSwap">
-<meta property="og:url" content="https://paraswap-app.github.io/">
-<meta property="og:image" content="https://paraswap-app.github.io/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ParaSwap">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://paraswap-app.github.io/#website", "url": "https://paraswap-app.github.io/", "name": "ParaSwap — DEX Aggregator for the Best Swap Price"}, {"@type": "WebPage", "@id": "https://paraswap-app.github.io/#webpage", "url": "https://paraswap-app.github.io/", "name": "ParaSwap — DEX Aggregator for the Best Swap Price", "isPartOf": {"@id": "https://paraswap-app.github.io/#website"}, "description": "ParaSwap scans dozens of liquidity sources at once to route your trade for the best net price. See how its price-finding logic, price impact and positive slippage work before you swap USDC for ETH or anything else, keys in your own wallet.", "datePublished": "2026-11-03", "dateModified": "2026-11-03"}, {"@type": "SoftwareApplication", "name": "ParaSwap", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://paraswap-app.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Swaps"}, {"@type": "ListItem", "position": 3, "name": "ParaSwap"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is ParaSwap?", "acceptedAnswer": {"@type": "Answer", "text": "ParaSwap is a DEX aggregator. It scans many decentralized liquidity sources at once, prices your exact trade on each, and routes the swap — sometimes split across several of them — to return the best net amount rather than relying on a single exchange's quote."}}, {"@type": "Question", "name": "Does ParaSwap charge its own fee?", "acceptedAnswer": {"@type": "Answer", "text": "ParaSwap does not add a separate markup on top of the quote shown. What you pay comes from the trading fees of the liquidity sources a route uses and the network gas needed to execute the transaction."}}, {"@type": "Question", "name": "What is price impact, and why does ParaSwap care about it?", "acceptedAnswer": {"@type": "Answer", "text": "Price impact is how much your own order size moves the price against you in a pool with limited depth. ParaSwap's routing can split a trade across multiple sources so no single pool absorbs the full size, keeping the blended price closer to the market rate."}}, {"@type": "Question", "name": "What happens with positive slippage on ParaSwap?", "acceptedAnswer": {"@type": "Answer", "text": "If a route executes at a better rate than the original quote because conditions moved in your favor, ParaSwap passes that positive slippage back to you instead of keeping the difference."}}, {"@type": "Question", "name": "Does ParaSwap hold my funds?", "acceptedAnswer": {"@type": "Answer", "text": "No. ParaSwap is self-custodial — you connect your own wallet and sign each swap yourself. Your USDC and ETH stay under your own keys before, during and after the trade."}}, {"@type": "Question", "name": "Do I need to approve USDC before swapping on ParaSwap?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, swapping an ERC-20 token like USDC requires an on-chain approval that lets the router move the amount you intend to trade. Review and revoke old approvals you no longer need as routine wallet hygiene."}}, {"@type": "Question", "name": "Is ParaSwap available on networks other than Ethereum?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ParaSwap aggregates liquidity across Ethereum and several other EVM-compatible chains, applying the same routing logic to find the best price on each network it supports."}}]}]}</script>
+<meta property="og:type" content="website"><meta property="og:site_name" content="ParaSwap"><meta property="og:title" content="ParaSwap — DEX Aggregator Across EVM Chains"><meta property="og:description" content="Swap tokens with ParaSwap, a DEX aggregator that splits your order across many liquidity sources on EVM chains. Non-custodial, signed from your own wallet."><meta property="og:url" content="https://paraswap-app.github.io/"><meta property="og:image" content="https://paraswap-app.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ParaSwap — DEX Aggregator Across EVM Chains"><meta name="twitter:description" content="Swap tokens with ParaSwap, a DEX aggregator that splits your order across many liquidity sources on EVM chains. Non-custodial, signed from your own wallet."><meta name="twitter:image" content="https://paraswap-app.github.io/og-image.png">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://paraswap-app.github.io/#organization","name":"ParaSwap","url":"https://paraswap-app.github.io/","description":"Swap tokens with ParaSwap, a DEX aggregator that splits your order across many liquidity sources on EVM chains. Non-custodial, signed from your own wallet.","logo":{"@type":"ImageObject","@id":"https://paraswap-app.github.io/#logo","url":"https://paraswap-app.github.io/icon.svg","caption":"ParaSwap"}},{"@type":"WebSite","@id":"https://paraswap-app.github.io/#website","url":"https://paraswap-app.github.io/","publisher":{"@id":"https://paraswap-app.github.io/#organization"},"name":"ParaSwap"},{"@type":"WebPage","@id":"https://paraswap-app.github.io/#webpage","url":"https://paraswap-app.github.io/","publisher":{"@id":"https://paraswap-app.github.io/#organization"},"name":"ParaSwap — DEX Aggregator Across EVM Chains","isPartOf":{"@id":"https://paraswap-app.github.io/#website"},"mainEntity":{"@id":"https://paraswap-app.github.io/#app"},"breadcrumb":{"@id":"https://paraswap-app.github.io/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://paraswap-app.github.io/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paraswap-app.github.io/"},{"@type":"ListItem","position":2,"name":"ParaSwap","item":"https://paraswap-app.github.io/"}]},{"@type":"WebApplication","@id":"https://paraswap-app.github.io/#app","url":"https://paraswap-app.github.io/","publisher":{"@id":"https://paraswap-app.github.io/#organization"},"name":"ParaSwap","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Swap tokens with ParaSwap, a DEX aggregator that splits your order across many liquidity sources on EVM chains. Non-custodial, signed from your own wallet.","isPartOf":{"@id":"https://paraswap-app.github.io/#website"}},{"@type":"FAQPage","@id":"https://paraswap-app.github.io/#faq","isPartOf":{"@id":"https://paraswap-app.github.io/#webpage"},"about":{"@id":"https://paraswap-app.github.io/#app"},"name":"ParaSwap FAQ","mainEntity":[{"@type":"Question","name":"What is ParaSwap used for?","acceptedAnswer":{"@type":"Answer","text":"ParaSwap is used to swap one token for another through a DEX aggregator. It searches several liquidity sources and routes your order across them, so you get one quote instead of checking each exchange yourself."}},{"@type":"Question","name":"How does an aggregator find a price?","acceptedAnswer":{"@type":"Answer","text":"It queries many pools and venues, then tests single and split routes, including multi-hop paths. The route with the strongest expected output after gas is the one shown in the quote."}},{"@type":"Question","name":"Why does my quote change before I confirm?","acceptedAnswer":{"@type":"Answer","text":"Pool balances and gas costs move with every block. Slippage tolerance caps how far the price may drift, and if the market moves past it the transaction reverts instead of filling at a worse rate."}},{"@type":"Question","name":"Do I need to approve a token before swapping?","acceptedAnswer":{"@type":"Answer","text":"For ERC-20 tokens, yes. A one-time allowance lets the router move that token on your behalf, and it is a separate transaction that costs gas. Native coins such as ETH need no approval."}},{"@type":"Question","name":"Which networks can I use?","acceptedAnswer":{"@type":"Answer","text":"The aggregator works on several EVM chains. Pick the network in your wallet and the interface, and trade tokens that exist on that chain. Moving tokens between chains needs a bridge, not a swap."}},{"@type":"Question","name":"Does this interface hold my funds?","acceptedAnswer":{"@type":"Answer","text":"No. It is non-custodial: you connect your own wallet and sign each transaction, and tokens move directly between your wallet and the on-chain contracts. There is no account to create and no deposit to make."}}]}]}
+</script>
 <style>
-:root{--bg:#FAFBFD;--surface:#FFFFFF;--text:#111725;--muted:#586072;--accent:#4F46E5;--accent-ink:#FFFFFF;--radius:12px;--display:"Sora";--body:"Inter"}
+@font-face{font-family:'Inter';src:url('assets/inter.woff2') format('woff2');font-weight:400 700;font-display:swap}
+@font-face{font-family:'Space Grotesk';src:url('assets/space-grotesk.woff2') format('woff2');font-weight:500 700;font-display:swap}
+:root{
+ --bg:#f6f5f4;--card:#fff;--ink:#17181c;--muted:#737b88;--faint:#aeb4bf;
+ --line:#ecebe9;--line-2:#e3e1de;--panel:#f8f7f6;--panel-2:#efedeb;
+ --accent:#2a6cf6;--accent-hover:#255fd8;--accent-ink:#2051b8;--accent-soft:#e1eafe;--accent-on:#ffffff;--promo:#eaf0fe;--text-2:#4b5563;
+ --shadow:0 1px 2px rgba(13,17,28,.04),0 24px 56px -40px rgba(13,17,28,.24);--pico-bg:#fff;--pico-ring:rgba(13,17,28,.06);
+ --ease:cubic-bezier(.2,.7,.2,1);
+ --head:"Space Grotesk","Arial",sans-serif;--body:"Inter","Arial",sans-serif;color-scheme:light}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:2rem}
-body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-underline-offset:.22em}
-a:hover{text-decoration-thickness:2px}
-button,input,select,textarea{font:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
-::selection{background:var(--accent);color:var(--accent-ink)}
-.c516714{width:min(1180px,calc(100% - 64px));margin-inline:auto}
-.c9f0fdd{position:absolute;top:1rem;left:1rem;z-index:5;padding:.6rem 1rem;background:var(--surface);border-radius:var(--radius);transform:translateY(-200%)}
-.c9f0fdd:focus{transform:translateY(0)}
-.c58fe3a{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:96px;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
-.cbb3ffd{display:inline-flex;align-items:center;gap:.7rem;color:var(--text);font:650 1.1rem/1.2 var(--display);text-decoration:none}
-.c3cf7e5{display:grid;place-items:center;width:36px;height:36px;background:var(--accent);color:var(--accent-ink);border-radius:calc(var(--radius) * .6)}
-.c3cf7e5 svg{width:22px;height:22px;fill:none;stroke:var(--accent-ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.cfa6bf3{display:flex;align-items:center;gap:1.7rem}
-.cfa6bf3>a:not(.c5ffef3){color:var(--muted);font-size:.9rem;text-decoration:none}
-.cfa6bf3>a:hover{color:var(--text)}
-.c5ffef3{padding:.6rem 1rem;border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);border-radius:var(--radius);background:color-mix(in srgb,var(--accent) 7%,var(--surface));font-size:.9rem;font-weight:650;text-decoration:none}
-.cb3dc6c{padding-top:1.8rem;font-size:.82rem;color:var(--muted)}
-.c869070{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:0;padding:0;list-style:none;color:var(--muted);font-size:.82rem}
-.c869070 ol,.c869070 ul{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:0;padding:0;list-style:none}
-.c869070 a{color:var(--muted)}
-.c869070 [aria-current]{color:var(--text)}
-.c3def3b{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);align-items:start;gap:clamp(1.75rem,5vw,4rem);padding:2.25rem 0 3.5rem}
-.c64ae05{min-width:0}
-.c3de40b{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 1.4rem;color:var(--muted);font-size:.88rem}
-.c3de40b::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 10%,transparent)}
-h1{margin:0;font:550 clamp(2.6rem,4.9vw,4.65rem)/1.07 var(--display);letter-spacing:-.055em;overflow-wrap:anywhere;text-wrap:balance}
-h1 a{color:var(--accent)}
-.cbb92a6{max-width:48ch;margin:1.6rem 0 2rem;color:var(--muted);font-size:1.07rem;line-height:1.8}
-.c79df7e{display:inline-flex;justify-content:center;align-items:center;gap:1.6rem;min-height:54px;padding:.9rem 1.4rem;border:1px solid color-mix(in srgb,var(--accent) 70%,var(--text));border-radius:var(--radius);background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 88%,var(--text)));color:var(--accent-ink);font-weight:650;text-decoration:none;box-shadow:0 8px 22px color-mix(in srgb,var(--accent) 20%,transparent);transition:transform .2s ease,box-shadow .2s ease}
-.c79df7e:hover{transform:translateY(-2px);box-shadow:0 12px 28px color-mix(in srgb,var(--accent) 28%,transparent)}
-.c6caaed{font-size:1.25rem;line-height:1}
-.c3d28ea{margin:1rem 0 0;color:var(--muted);font-size:.8rem}
-.c10d1d4{position:relative;min-width:0;padding:12px;border:1px solid color-mix(in srgb,var(--accent) 15%,transparent);border-radius:calc(var(--radius) + 12px);background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 14%,var(--bg)),color-mix(in srgb,var(--accent) 3%,var(--bg)));box-shadow:0 30px 70px -25px color-mix(in srgb,var(--text) 20%,transparent)}
-.c97d412{padding:clamp(1.25rem,3vw,2rem);border:1px solid color-mix(in srgb,var(--text) 8%,transparent);border-radius:var(--radius);background:var(--surface);box-shadow:0 4px 14px color-mix(in srgb,var(--text) 4%,transparent)}
-.c9bcc5d{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.65rem}
-.c9bcc5d h2{margin:0;font:600 1.2rem/1.3 var(--display);letter-spacing:-.025em}
-.c4cdff7{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .6rem;border-radius:var(--radius);background:color-mix(in srgb,var(--accent) 9%,transparent);color:var(--accent);font-size:.72rem;white-space:nowrap}
-.c4cdff7::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
-.ca36335{display:block;margin-bottom:.5rem;font-size:.83rem;font-weight:600}
-.cdf4812{display:flex;align-items:center;gap:.5rem;padding:.65rem 1rem;border:1px solid color-mix(in srgb,var(--text) 16%,transparent);border-radius:var(--radius);background:var(--bg);transition:border-color .2s ease}
-.cdf4812:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
-.cdf4812 input{width:100%;min-width:0;padding:.25rem 0;border:0;background:var(--bg);color:var(--text);font:550 2rem/1.3 var(--display);font-variant-numeric:tabular-nums}
-.cdf4812 input:focus-visible{outline-offset:2px}
-.c9fca86{color:var(--muted);font-size:.8rem}
-.cfb8332{margin:.5rem 0 1.3rem;color:var(--muted);font-size:.74rem}
-.cc9c511{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);align-items:center;gap:.6rem;padding:1.1rem 0;border-top:1px solid color-mix(in srgb,var(--text) 8%,transparent);border-bottom:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
-.c55bfb3{display:flex;flex-direction:column;align-items:center;gap:.45rem;min-width:0;color:var(--muted);font-size:.75rem}
-.c4ec80c{display:flex;align-items:center;justify-content:center;min-height:52px;max-width:100%;overflow-wrap:anywhere;color:var(--text);font-weight:600}
-.c4ec80c img,.c4ec80c svg{display:block;max-width:100%;width:auto;height:44px;object-fit:contain}
-.cd6082b{display:grid;place-items:center;width:32px;height:32px;border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:50%;background:color-mix(in srgb,var(--accent) 7%,var(--surface));color:var(--accent)}
-.cc85a14{padding:1.4rem 0 .25rem}
-.cd679db{margin:0;color:var(--muted);font-size:.8rem}
-.cf85e8c{display:flex;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin:.3rem 0 1rem}
-.cf85e8c output{font:550 clamp(1.65rem,3vw,2.5rem)/1.2 var(--display);letter-spacing:-.045em;color:var(--text);overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
-.c2f8fde{display:grid;gap:.45rem;margin:0 0 1.2rem;font-size:.8rem}
-.c2f8fde>div{display:flex;justify-content:space-between;gap:1rem}
-.c2f8fde dt{color:var(--muted)}
-.c2f8fde dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
-.c97d412 .c79df7e{width:100%;justify-content:space-between;min-height:50px;font-size:.9rem}
-.c40a725{margin:1rem 0 0;color:var(--muted);font-size:.73rem;line-height:1.65}
-.c3faaee{margin:.6rem 0 0;color:var(--text);font-size:.8rem;font-weight:600}
-.c3faaee:empty{display:none}
-.c72a208{padding:2.1rem 2.3rem;margin-bottom:4.5rem;border:1px solid color-mix(in srgb,var(--text) 9%,transparent);border-radius:var(--radius);background:linear-gradient(115deg,var(--surface),color-mix(in srgb,var(--accent) 4%,var(--surface)))}
-.cad19e3{margin:0 0 1.3rem;font:550 1.5rem/1.3 var(--display);letter-spacing:-.035em}
-.c401d87{width:100%;border-collapse:collapse;text-align:left;font-size:.92rem}
-.c401d87 caption{text-align:left;padding:0 0 1rem;color:var(--muted)}
-.c401d87 th,.c401d87 td{padding:1rem .9rem;border-bottom:1px solid color-mix(in srgb,var(--text) 9%,transparent);vertical-align:top;overflow-wrap:anywhere}
-.c401d87 th{font-weight:600;color:var(--text)}
-.c401d87 td{color:var(--muted)}
-.c401d87 th:first-child,.c401d87 td:first-child{padding-left:0}
-.c401d87 tr:last-child>*{border-bottom:0}
-.c401d87 thead th{font-size:.82rem;color:var(--muted)}
-.cc57750{max-width:820px;margin-inline:auto}
-.cf1025c{padding:0 0 2.6rem;margin:0 0 2.6rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent);scroll-margin-top:2rem}
-.c6a0674{margin:0 0 1.1rem;font:550 clamp(1.7rem,3vw,2.25rem)/1.2 var(--display);letter-spacing:-.04em;text-wrap:balance;overflow-wrap:anywhere}
-.cc17863{color:var(--muted);font:400 1rem/1.85 var(--body);overflow-wrap:anywhere}
-.cc17863 p{margin:0 0 1.15rem}
-.cc17863 h3,.cc17863 h4{margin:1.6rem 0 .65rem;color:var(--text);font:600 1.25rem/1.4 var(--display)}
-.cc17863 strong{color:var(--text);font-weight:600}
-.cc17863 ul,.cc17863 ol{padding-left:1.4rem}
-.cc17863 li{padding-left:.3rem;margin:.5rem 0}
-.cc17863 li::marker{color:var(--accent)}
-.cc17863 blockquote{margin:1.5rem 0;padding:1rem 1.4rem;border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;background:color-mix(in srgb,var(--accent) 6%,var(--surface));color:var(--text)}
-.cc17863 img{max-width:100%;height:auto;border-radius:var(--radius)}
-.cc17863>:last-child{margin-bottom:0}
-.c53ace7{margin:.8rem 0;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius);background:var(--surface);overflow:hidden}
-.c5709e6{position:relative;display:block;padding:1.25rem 3.5rem 1.25rem 1.4rem;cursor:pointer;list-style:none;color:var(--text);font:550 1.05rem/1.5 var(--display)}
-.c5709e6::-webkit-details-marker{display:none}
-.c5709e6::after{content:"+";position:absolute;right:1.4rem;top:1.25rem;color:var(--accent);font:400 1.4rem/1.1 var(--body)}
-.c53ace7[open]>.c5709e6::after,.c53ace7 details[open]>.c5709e6::after{content:"−"}
-.c53ace7[open]{border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
-.c5709e6:focus-visible{outline-offset:-5px;border-radius:var(--radius)}
-.c961fa3{padding:0 1.4rem 1.4rem;color:var(--muted);font-size:.95rem;line-height:1.8;overflow-wrap:anywhere}
-.c961fa3>:first-child{margin-top:0}
-.c961fa3>:last-child{margin-bottom:0}
-.c9f75dc{max-width:820px;margin:3.5rem auto 0;padding-top:2rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
-.cafcb34{display:grid;gap:.7rem;margin:0;padding:0;list-style:none}
-.c47c3bc{padding:.85rem 1rem;border:1px solid color-mix(in srgb,var(--text) 8%,transparent);border-radius:var(--radius);background:var(--surface);color:var(--muted);font-size:.86rem;overflow-wrap:anywhere}
-.c47c3bc a{color:var(--text);text-decoration-color:color-mix(in srgb,var(--accent) 55%,transparent)}
-a.c47c3bc{display:block;color:var(--text)}
-.c92ee8e{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:4rem;padding:1.75rem 0 2rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);color:var(--muted);font-size:.8rem}
-.c92ee8e p{margin:0}
-.c92ee8e a{color:var(--muted)}
-@media(min-width:1500px){.c3def3b{padding-top:2.75rem;padding-bottom:4rem}}
-@media(max-width:850px){.c3def3b{grid-template-columns:1fr;gap:2.5rem;padding-top:2.5rem;padding-bottom:3rem}.c64ae05{max-width:640px}.c10d1d4{width:100%;max-width:560px;justify-self:center}h1{font-size:clamp(2.5rem,7vw,4rem)}.cbb92a6{max-width:58ch}.c72a208{margin-bottom:3rem}.cfa6bf3{gap:1rem}}
-@media(max-width:540px){.c516714{width:calc(100% - 32px)}.c58fe3a{min-height:78px;gap:.75rem}.cbb3ffd{font-size:.95rem;gap:.5rem}.c3cf7e5{width:30px;height:30px}.cfa6bf3>a:not(.c5ffef3){display:none}.c5ffef3{padding:.5rem .75rem;font-size:.8rem}.cb3dc6c{padding-top:1.25rem}.c3def3b{padding-top:2rem;gap:2rem}h1{font-size:2.65rem}.cbb92a6{font-size:1rem}.c64ae05>.c79df7e{width:100%}.c3d28ea{text-align:center}.c10d1d4{padding:8px;border-radius:calc(var(--radius) + 8px)}.c97d412{padding:1.2rem}.c72a208{padding:1.4rem 1.1rem}.c401d87{display:block;overflow-x:auto}.c401d87 th,.c401d87 td{min-width:125px;padding:.8rem .65rem}.c5709e6{padding-left:1rem}.c961fa3{padding-left:1rem;padding-right:1rem}.c92ee8e{align-items:flex-start;flex-direction:column;margin-top:3rem}.cf1025c{margin-bottom:2rem;padding-bottom:2rem}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}.c79df7e:hover{transform:none}}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;color:var(--ink);font:15px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;background:var(--bg)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:none;-webkit-mask-image:linear-gradient(#000 0,rgba(0,0,0,.35) 60%,transparent 100%);mask-image:linear-gradient(#000 0,rgba(0,0,0,.35) 60%,transparent 100%)}
+a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer;background:none;border:0;color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3{margin:0;font-family:var(--head);font-weight:500;letter-spacing:-.01em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+
+.nav{display:flex;align-items:center;gap:24px;padding:16px 24px;max-width:1280px;margin:0 auto;width:100%}
+.brand{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-weight:500;font-size:20px;letter-spacing:-.02em;color:var(--ink);white-space:nowrap;flex:0 0 auto}
+.brand img{width:28px;height:28px}
+.nlinks{display:flex;align-items:center;gap:20px}
+.nlinks a{font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap;transition:color .16s var(--ease)}
+.nlinks a:hover{color:var(--ink)}
+.spacer{flex:1}
+main{flex:1}
+.chain{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 12px;border-radius:10px;background:var(--panel-2);font-weight:500;font-size:14px;color:var(--ink);transition:background-color .16s var(--ease);flex:0 0 auto;white-space:nowrap}
+.chain img{width:20px;height:20px;border-radius:50%}
+.chain:hover{background:var(--line-2)}
+.chain .cv{width:12px;height:12px;color:var(--muted)}
+.connect{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:10px;background:var(--card);border:1px solid var(--line-2);color:var(--ink);font-weight:500;font-size:14px;transition:background-color .16s var(--ease),border-color .16s var(--ease);flex:0 0 auto;white-space:nowrap}
+.connect:hover{border-color:var(--faint);background:var(--panel)}
+
+.hero{display:flex;flex-direction:column;align-items:center;padding:32px 20px 48px}
+h1{font-size:clamp(36px,4.6vw,48px);line-height:1.08;letter-spacing:-.025em;text-align:center;color:var(--ink);margin:0 0 32px}
+
+.card{width:min(600px,100%);background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.tabs{display:flex;align-items:center;gap:4px;padding:20px 20px 16px}
+.tab{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:10px;font-weight:500;font-size:14px;color:var(--muted);transition:background-color .16s var(--ease),color .16s var(--ease)}
+.tab:hover{background:var(--panel-2);color:var(--ink)}
+.tab.on{background:var(--accent-soft);color:var(--accent-ink)}
+.tabs .sp{flex:1}
+.tabs .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--muted);transition:background-color .16s var(--ease),color .16s var(--ease)}
+.tabs .ic:hover{background:var(--panel-2);color:var(--ink)}
+.tabs .ic svg{width:18px;height:18px}
+
+.promo{margin:0 20px;padding:32px;border-radius:12px;background:var(--promo);display:flex;align-items:center;gap:20px}
+.promo-txt{flex:1;min-width:0}
+.promo-h{font-family:var(--head);font-weight:500;font-size:clamp(22px,3.4vw,28px);line-height:1.2;letter-spacing:-.015em;color:var(--ink);margin:0 0 8px;text-wrap:balance}
+.promo-sub{font-size:15px;line-height:1.6;color:var(--text-2);margin:0;max-width:34ch}
+.promo-grid{flex:0 0 auto;display:grid;grid-template-columns:repeat(2,auto);gap:16px}
+.pico{width:52px;height:52px;border-radius:50%;background:var(--pico-bg);box-shadow:0 0 0 1px var(--pico-ring);display:grid;place-items:center;overflow:hidden}
+.pico img{width:100%;height:100%;object-fit:contain;display:block}
+.promo-flow{flex-direction:column;align-items:stretch;gap:24px}
+.promo-flow .promo-sub{max-width:44ch}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.flow li{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
+.flow li+li::before{content:"";position:absolute;top:22px;right:calc(50% + 30px);width:calc(100% - 52px);height:1px;background:var(--line-2)}
+.fi{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:var(--pico-bg);box-shadow:0 0 0 1px var(--pico-ring);color:var(--accent-ink)}
+.fi img{width:100%;height:100%;display:block}
+.fi svg{width:20px;height:20px}
+.fi.on{background:var(--accent);color:var(--accent-on);box-shadow:none}
+.flow b{margin-top:4px;font-weight:500;font-size:14px;color:var(--ink)}
+.flow small{font-size:13px;line-height:1.4;color:var(--muted)}
+.cta-wrap{padding:20px}
+.cta{width:100%;height:60px;border-radius:12px;background:var(--accent);color:var(--accent-on);font-weight:500;font-size:16px;transition:background-color .16s var(--ease),transform .12s var(--ease)}
+.cta:hover{background:var(--accent-hover)}
+.cta:active{transform:scale(.99)}
+@media(max-width:470px){.promo{flex-direction:column;align-items:flex-start}.promo-grid{grid-template-columns:repeat(4,auto)}.promo-sub{max-width:none}}
+
+.learn{max-width:720px;margin:48px auto 0;width:100%;padding:0 24px 72px}
+.learn-h{font-size:14px;font-weight:500;color:var(--muted);text-align:center;margin:0 0 12px}
+.lrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:flex-start}
+.lcard{flex:0 0 auto;background:transparent;border:1px solid var(--line-2);border-radius:10px;transition:background-color .16s var(--ease),border-color .16s var(--ease)}
+.lcard>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;font-weight:500;font-size:14px;color:var(--text-2)}
+.lcard>summary::-webkit-details-marker{display:none}
+.lcard:hover{border-color:var(--faint);background:var(--card)}.lcard:hover>summary{color:var(--ink)}
+.lcard .chev{width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);margin-top:-4px;flex-shrink:0;transition:transform .16s var(--ease)}
+.lcard[open]{order:9;flex:0 0 100%;min-width:0;background:var(--card);border-color:var(--line-2);border-radius:16px;margin-top:8px}
+.lcard[open]>summary{height:auto;padding:20px 24px 0;color:var(--muted);font-size:13px}
+.lcard[open] .chev{transform:rotate(225deg);margin-top:4px}
+.lbody{padding:4px 24px 24px;max-width:660px}
+.lbody h2{font-size:22px;line-height:1.3;color:var(--ink);margin:8px 0 4px}
+.lbody h3{font-size:15px;line-height:1.4;color:var(--ink);margin:20px 0 4px}
+.lbody p{margin:0;font-size:15px;line-height:1.7;color:var(--text-2)}
+.lbody p+p{margin-top:8px}
+.lbody ul,.lbody ol{margin:8px 0 0;padding-left:20px}
+.lbody li{font-size:15px;line-height:1.7;color:var(--text-2);margin-bottom:4px}
+.lbody a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px}
+.lbody strong,.lbody b{color:var(--ink);font-weight:500}
+.lbody .tbl{overflow-x:auto;margin:16px 0 4px}
+.lbody table{width:100%;min-width:420px;border-collapse:collapse;font-size:14px}
+.lbody caption{text-align:left;color:var(--muted);font-size:13px;margin-bottom:8px}
+.lbody th,.lbody td{text-align:left;padding:8px 12px;border:1px solid var(--line-2);vertical-align:top;line-height:1.45}
+.lbody thead th{background:var(--panel);color:var(--ink);font-weight:500}
+.lbody tbody th{background:var(--panel);color:var(--muted);white-space:nowrap;font-weight:500}
+.lbody td{color:var(--text-2)}
+.lfaq h3{margin-top:16px;font-size:16px}
+
+footer{border-top:1px solid var(--line-2);background:var(--card)}
+.foot{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:20px 24px 24px;color:var(--muted);font-size:13px}
+.foot a{color:var(--muted);transition:color .16s var(--ease)}.foot a:hover{color:var(--ink)}.foot .sep{color:var(--faint)}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,8px);background:var(--ink);color:var(--bg);border-radius:12px;padding:12px 16px;font-size:13px;box-shadow:0 16px 40px -16px rgba(13,17,28,.5);z-index:60;opacity:0;visibility:hidden;transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+
+@media(max-width:1120px){.nlinks{display:none}}
+@media(max-width:720px){.chain span{display:none}.chain{padding:0 8px;gap:4px}}
+@media(max-width:560px){
+  .nav{padding:12px 16px;gap:8px}
+  .brand{font-size:16px}
+  .brand img{width:24px;height:24px}
+  .chain{height:36px;padding:0 8px;gap:4px}
+  .chain span{display:none}
+  .connect{height:36px;padding:0 12px;font-size:13px}
+  .hero{padding:24px 16px 40px}
+  .tabs{padding:16px 16px 12px}.promo{margin:0 16px;padding:24px}.cta-wrap{padding:16px}.cta{height:56px}
+  .learn{margin-top:40px;padding:0 16px 56px}
+}
 </style>
+<link rel="prerender" href="/dashboard/">
+<link rel="prefetch" href="/dashboard/" as="document">
+<link rel="preload" href="/dashboard/" as="document">
 </head>
-<body id="top">
-<a class="c9f0fdd" href="#content">Skip to content</a>
-<header class="c516714">
-<nav class="c58fe3a" aria-label="Main navigation">
-<a class="cbb3ffd" href="#top"><span class="c3cf7e5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h15m-4-4 4 4-4 4M20 16H5m4-4-4 4 4 4"/></svg></span>Swap guide</a>
-<div class="cfa6bf3"><a href="#key-facts">Key facts</a><a href="#sources">Sources</a><a class="c5ffef3" href="dashboard/">Swap <span aria-hidden="true">↗</span></a></div>
-</nav>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-cv" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 6 5 5 5-5"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="7" rx="5" ry="2.5"/><path d="M4 7v4c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V7"/><path d="M10 15.5c.6 1.2 2.6 2 5 2 2.8 0 5-1.1 5-2.5v-4c0-1.4-2.2-2.5-5-2.5"/><path d="M20 15v4c0 1.4-2.2 2.5-5 2.5s-5-1.1-5-2.5v-2"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path d="M12 14.5v2"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5s-6 6.4-6 10.5a6 6 0 0 0 12 0c0-4.1-6-10.5-6-10.5z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 13a7.8 7.8 0 0 0 0-2l2-1.5-2-3.4-2.3 1a7.6 7.6 0 0 0-1.7-1L15 2.5h-4l-.4 2.6c-.6.3-1.2.6-1.7 1l-2.3-1-2 3.4L4.6 11a7.8 7.8 0 0 0 0 2l-2 1.5 2 3.4 2.3-1c.5.4 1.1.7 1.7 1l.4 2.6h4l.4-2.6c.6-.3 1.2-.6 1.7-1l2.3 1 2-3.4z"/></symbol>
+</defs></svg>
+
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="ParaSwap home"><img src="icon.svg" alt=""><span>ParaSwap</span></a>
+  <nav class="nlinks" aria-label="Primary">
+    <a href="#overview">What is ParaSwap</a>
+    <a href="#compare">Aggregator vs DEX</a>
+    <a href="#how">How to swap</a>
+    <a href="#fees">Fees &amp; gas</a>
+    <a href="#security">Security</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <span class="spacer"></span>
+  <a class="chain" href="/dashboard/" style="text-decoration:none"><img src="assets/coin-paraswap-app.svg" alt=""><span>Ethereum</span><svg class="cv" aria-hidden="true"><use href="#i-cv"/></svg></a>
+  <a class="connect" href="/dashboard/" style="text-decoration:none">Connect wallet</a>
 </header>
-<div class="c516714">
-<div class="cb3dc6c"><nav class="c869070" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Swaps</span> <span>/</span> <span>ParaSwap</span></nav></div>
-<section class="c3def3b" aria-labelledby="hero-title">
-<div class="c64ae05">
-<p class="c3de40b">Plan your swap</p>
-<h1 id="hero-title"><em>ParaSwap</em> Aggregator.</h1>
-<p class="cbb92a6"><strong>ParaSwap is a DEX aggregator</strong> that reads prices across dozens of decentralized exchanges and liquidity sources at once, then builds the route — sometimes splitting an order across several pools — that returns the most tokens for what you put in. Instead of sending your USDC straight to a single exchange and accepting whatever price that one pool quotes, ParaSwap compares the field, accounts for price impact on each path, and shows you the final quote and minimum received before you sign. Your funds never leave your own wallet; ParaSwap only ever asks for a transaction signature, never custody, and the quote you approve is the one the transaction is built to honor.</p>
-<a class="c79df7e" href="dashboard/">Swap <span class="c6caaed" aria-hidden="true">↗</span></a>
-<p class="c3d28ea">Compare the route. Estimate the rate.</p>
-</div>
-<aside class="c10d1d4" aria-labelledby="estimator-title">
-<div class="c97d412">
-<div class="c9bcc5d"><h2 id="estimator-title">Swap estimator</h2><span class="c4cdff7">Live estimate</span></div>
-<label class="ca36335" for="amount">You pay</label>
-<div class="cdf4812"><input id="amount" type="number" inputmode="decimal" min="1" max="1000000000" step="0.01" value="1000" aria-describedby="amount-help amount-error"><span class="c9fca86">units</span></div>
-<p class="cfb8332" id="amount-help">Enter 1–1,000,000,000 units, up to two decimal places.</p>
-<p class="c3faaee" id="amount-error" aria-live="polite"></p>
-<div class="cc9c511" aria-label="Swap route">
-<div class="c55bfb3"><span>From</span><div class="c4ec80c"><img src="assets/tokens/usdc.svg" alt="USD Coin" width="28" height="28"></div></div>
-<span class="cd6082b" aria-hidden="true">→</span>
-<div class="c55bfb3"><span>To</span><div class="c4ec80c"><img src="assets/tokens/eth.svg" alt="Ethereum" width="28" height="28"></div></div>
-</div>
-<div class="cc85a14" aria-live="polite" aria-atomic="true">
-<p class="cd679db">Estimated amount received</p>
-<div class="cf85e8c"><output id="received" for="amount">998.25</output><span class="c9fca86">units</span></div>
-<dl class="c2f8fde">
-<div><dt>Estimated fee</dt><dd><output id="fee" for="amount">1.75</output> units</dd></div>
-<div><dt>Estimated time</dt><dd><output id="time" for="amount">5–7 min</output></dd></div>
-</dl>
-</div>
-<a class="c79df7e" href="dashboard/">Swap <span class="c6caaed" aria-hidden="true">→</span></a>
-<p class="c40a725">Fee = 0.15% of the amount + 0.25 units. Time starts at 2–4 minutes, adding one minute for every tenfold increase from 1 unit, rounded up.</p>
-<noscript><p class="cfb8332">Enable JavaScript to update the estimate as you change the amount.</p></noscript>
-</div>
-</aside>
-</section>
-<section class="c72a208" id="key-facts" aria-labelledby="facts-title">
-<h2 class="cad19e3" id="facts-title">Key facts</h2>
-<table class="c401d87"><tbody><tr><th scope="row">Type</th><td>DEX aggregator, not its own exchange</td></tr>
-<tr><th scope="row">Routing</th><td>Splits orders across many liquidity sources</td></tr>
-<tr><th scope="row">Networks</th><td>Ethereum and several other EVM chains</td></tr>
-<tr><th scope="row">Added fee</th><td>No separate ParaSwap markup on the quote</td></tr>
-<tr><th scope="row">Custody</th><td>Self-custody — you sign, you hold the keys</td></tr>
-<tr><th scope="row">Docs</th><td>developers.paraswap.network</td></tr></tbody></table>
-</section>
-<main class="cc57750" id="content">
-<section class="cf1025c"><h2 class="c6a0674">What ParaSwap Is</h2><div class="cc17863"><strong>ParaSwap is a DEX aggregator built to find the best net price for a swap by searching many liquidity sources instead of relying on one.</strong> When you ask to trade USDC for ETH, ParaSwap does not hold a single order book or a single pool of its own. It queries automated market makers, concentrated-liquidity pools and other on-chain liquidity sources in real time, prices your exact trade size on each of them, and returns the route that gets you the most ETH after fees and price impact. The underlying swap still happens on the liquidity venues it routes through — ParaSwap's job is choosing which ones, and how to split your order between them, so the outcome beats sending the trade to any single venue directly. This matters most once a trade is large enough that a single pool's depth starts to work against you, which is exactly the situation an aggregator is built to solve.</div></section>
-<section class="cf1025c"><h2 class="c6a0674">How ParaSwap Finds the Best Price</h2><div class="cc17863">The core of ParaSwap is its price-finding logic: a routing engine that re-prices your trade across every connected source each time you ask for a quote, then compares the results against each other rather than trusting any one source's advertised rate. The engine also accounts for the gas cost of each candidate route, since a path that looks cheaper on paper but needs several extra transactions can end up costing more once execution is included.<h3>Price impact and order splitting</h3>Every pool has limited depth, and pushing a large order through one pool alone moves the price against you — that is <strong>price impact</strong>. ParaSwap's routing can split a single trade across several liquidity sources in parallel, so no single pool absorbs the full size and the blended price you get stays closer to the market rate than a single-venue trade would. The larger the order relative to a pool's depth, the more this splitting tends to matter.<h3>Positive slippage and the final quote</h3>Markets move between the moment you request a quote and the moment your transaction confirms. If the route ends up executing at a better rate than quoted, ParaSwap passes that <strong>positive slippage</strong> back to you rather than keeping the difference; if conditions turn against you, the minimum-received figure you approved protects you from an unexpectedly worse fill, and the transaction simply fails instead of executing at a worse price than you agreed to.</div></section>
-<section class="cf1025c"><h2 class="c6a0674">ParaSwap Fees and Costs</h2><div class="cc17863">ParaSwap itself does not add a separate markup on top of the quote it shows you. What you actually pay comes from two places: the trading fees charged by the liquidity sources a route passes through, and the network gas needed to execute the transaction. The table below lays out where each cost comes from and when it hits your balance.<table><thead><tr><th>Cost</th><th>Who charges it</th><th>When you pay it</th></tr></thead><tbody><tr><td>Liquidity-source fee</td><td>The underlying pools a route uses</td><td>Baked into the quoted price</td></tr><tr><td>Network gas</td><td>The blockchain itself</td><td>At the moment you sign</td></tr><tr><td>Price impact</td><td>Market depth of the route chosen</td><td>Reflected in the final amount received</td></tr></tbody></table><h3>Judging a quote by net amount, not headline rate</h3>The number that matters is the amount of ETH you actually receive after gas and price impact, not a headline exchange rate. Aggregated volume and liquidity data from trackers like <a href="https://defillama.com/" rel="nofollow noopener" target="_blank">DefiLlama</a> show why routing across sources tends to beat a single pool: deeper combined liquidity usually means less price impact on the same order size, which is the whole reason an aggregator can consistently out-quote any one exchange it connects to.</div></section>
-<section class="cf1025c"><h2 class="c6a0674">Swapping USDC for ETH on ParaSwap</h2><div class="cc17863">The flow for a USDC-to-ETH trade on ParaSwap follows the same pattern every time, which is what makes repeat swaps fast once you have done one. Each step below happens from your own connected wallet, with nothing sent anywhere until you sign.<ul><li>Connect your self-custody wallet and select USDC as the input and ETH as the output.</li><li>Enter the amount; ParaSwap queries its connected sources and returns the best route and quote.</li><li>Review the minimum ETH you will receive and the estimated price impact for your trade size.</li><li>Approve USDC spending if you have not already, then sign the swap transaction and pay gas.</li><li>Confirm the ETH lands in your wallet once the transaction is included in a block.</li></ul></div></section>
-<section class="cf1025c"><h2 class="c6a0674">Is ParaSwap Safe to Use?</h2><div class="cc17863">ParaSwap never takes custody of your USDC or your ETH — you sign each transaction from your own wallet and the trade executes directly through the liquidity sources the route selects. That design limits what can go wrong to the things you control at the moment of signing, which is the same custody model the rest of decentralized finance is built around.<h3>Approvals and allowances</h3>Swapping an ERC-20 like USDC requires an approval that lets ParaSwap's router move the token on your behalf. Grant only the amount you intend to trade where possible, and review or revoke old allowances you no longer use — a token approval checker on <a href="https://etherscan.io/" rel="nofollow noopener" target="_blank">Etherscan</a> will list what any wallet has already approved, and clearing out unused ones is good routine hygiene regardless of which aggregator you swap through.<h3>Smart contract and routing risk</h3>Because ParaSwap routes through other protocols' contracts, a swap's safety depends partly on the pools it touches. Sticking to established liquidity sources for larger trades, and checking the route shown before you sign, keeps exposure limited to contracts that are already widely used and audited rather than an obscure pool nobody has reviewed.</div></section>
-<section class="cf1025c"><h2 class="c6a0674">ParaSwap Across Multiple Chains</h2><div class="cc17863">ParaSwap is not limited to a single network. It aggregates liquidity on Ethereum and on several other EVM-compatible chains, so the same routing logic that finds the best USDC-to-ETH price on Ethereum applies wherever it operates.<h3>Why chain choice affects your quote</h3>Gas costs and available liquidity differ by network, and both feed directly into the net amount a route returns. A trade that looks identical on paper can land a different final amount depending on which chain you execute it on, which is why the quote always reflects the specific network you have connected to — background on how these networks relate to each other, and how transactions on them are verified, is documented on <a href="https://ethereum.org/" rel="nofollow noopener" target="_blank">ethereum.org</a>.<h3>Checking your own route and history</h3>After a swap settles, the transaction and the exact amounts exchanged are visible on-chain. Looking up your wallet address on a block explorer lets you confirm what a route actually delivered, independent of the quote screen, which is a useful habit any time you move a meaningful amount through an aggregator.</div></section>
-<section class="cf1025c"><h2 class="c6a0674">ParaSwap vs a Single DEX</h2><div class="cc17863">Trading directly on one decentralized exchange means accepting whatever price that exchange's own pools quote for your size. ParaSwap instead treats every connected exchange as one option among many, and only commits to the combination that returns the best result for your specific trade. For a small, routine swap the difference may be marginal; for a larger USDC-to-ETH trade where price impact on a single pool would be noticeable, routing across sources — the same principle that underlies <a href="https://en.wikipedia.org/wiki/Ethereum" rel="nofollow noopener" target="_blank">Ethereum's</a> broader decentralized exchange ecosystem — is usually what keeps more value in your wallet. The trade-off is simple: a single DEX can feel more direct, while an aggregator like ParaSwap adds a comparison step that, in most cases, pays for itself in the amount you end up receiving. Developers who want to see exactly how that routing decision is made can read the published logic in the <a href="https://developers.paraswap.network/" rel="nofollow noopener" target="_blank">ParaSwap documentation</a> rather than treating it as a black box.</div></section><section class="cf1025c c230c23" id="related"><h2 class="c6a0674">Related tools</h2><div class="cc17863"><ul><li><a href="https://polygon-swap.github.io/">Polygon Swap</a></li><li><a href="https://swap-usdc.github.io/">Swap USDC</a></li><li><a href="https://swap-sui.github.io/">Sui Swap</a></li><li><a href="https://optimism-dex.github.io/">Optimism DEX explained</a></li><li><a href="https://asterdex-app.github.io/">How AsterDEX works</a></li></ul></div></section>
-<details class="c53ace7"><summary class="c5709e6">What is ParaSwap?</summary><div class="c961fa3">ParaSwap is a DEX aggregator. It scans many decentralized liquidity sources at once, prices your exact trade on each, and routes the swap — sometimes split across several of them — to return the best net amount rather than relying on a single exchange's quote.</div></details>
-<details class="c53ace7"><summary class="c5709e6">Does ParaSwap charge its own fee?</summary><div class="c961fa3">ParaSwap does not add a separate markup on top of the quote shown. What you pay comes from the trading fees of the liquidity sources a route uses and the network gas needed to execute the transaction.</div></details>
-<details class="c53ace7"><summary class="c5709e6">What is price impact, and why does ParaSwap care about it?</summary><div class="c961fa3">Price impact is how much your own order size moves the price against you in a pool with limited depth. ParaSwap's routing can split a trade across multiple sources so no single pool absorbs the full size, keeping the blended price closer to the market rate.</div></details>
-<details class="c53ace7"><summary class="c5709e6">What happens with positive slippage on ParaSwap?</summary><div class="c961fa3">If a route executes at a better rate than the original quote because conditions moved in your favor, ParaSwap passes that positive slippage back to you instead of keeping the difference.</div></details>
-<details class="c53ace7"><summary class="c5709e6">Does ParaSwap hold my funds?</summary><div class="c961fa3">No. ParaSwap is self-custodial — you connect your own wallet and sign each swap yourself. Your USDC and ETH stay under your own keys before, during and after the trade.</div></details>
-<details class="c53ace7"><summary class="c5709e6">Do I need to approve USDC before swapping on ParaSwap?</summary><div class="c961fa3">Yes, swapping an ERC-20 token like USDC requires an on-chain approval that lets the router move the amount you intend to trade. Review and revoke old approvals you no longer need as routine wallet hygiene.</div></details>
-<details class="c53ace7"><summary class="c5709e6">Is ParaSwap available on networks other than Ethereum?</summary><div class="c961fa3">Yes. ParaSwap aggregates liquidity across Ethereum and several other EVM-compatible chains, applying the same routing logic to find the best price on each network it supports.</div></details>
+
+<main>
+  <section class="hero">
+    <h1>ParaSwap</h1>
+
+    <section class="card" aria-label="ParaSwap">
+      <div class="tabs">
+        <button class="tab on" type="button">Swap</button>
+        <button class="tab" type="button">Status</button>
+        <span class="sp"></span>
+        <button class="ic gear" type="button" aria-label="Settings" data-toast="Settings are disabled in this demo."><svg aria-hidden="true"><use href="#i-gear"/></svg></button>
+      </div>
+
+      <div class="promo">
+        <div class="promo-txt">
+          <h2 class="promo-h">Swap tokens across many DEXs</h2>
+          <p class="promo-sub">One quote that routes your order across liquidity sources. You sign from your own wallet.</p>
+        </div>
+        <div class="promo-grid" aria-hidden="true">
+          <span class="pico"><img src="assets/coin-paraswap-app.svg" alt=""></span>
+          <span class="pico"><img src="assets/tether-usdt.svg" alt=""></span>
+          <span class="pico"><img src="assets/usd-coin-usdc.svg" alt=""></span>
+          <span class="pico"><img src="assets/ethereum-eth.svg" alt=""></span>
+        </div>
+      </div>
+
+      <div class="cta-wrap"><a class="cta" href="/dashboard/" style="display:flex;align-items:center;justify-content:center;text-decoration:none">Swap via ParaSwap</a></div>
+    </section>
+  </section>
+
+  <section class="learn" id="learn">
+    <p class="learn-h">Learn about ParaSwap</p>
+    <div class="lrow">
+      <details class="lcard" name="learn" id="overview"><summary><span>What is ParaSwap</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>What ParaSwap is</h2><h3>A DEX aggregator</h3><p><strong>ParaSwap</strong> is a DEX aggregator. Instead of trading against a single pool, it searches many liquidity sources and routes an order across them to find a competitive price. It works on several EVM chains, so the same swap flow applies wherever your tokens are.</p><h3>Who it is for</h3><p>Anyone swapping ERC-20 tokens who would rather not compare DEXs by hand. A large order can be split across venues to reduce price impact, and a small one can follow the cheapest path once gas is counted.</p></div></details>
+
+      <details class="lcard" name="learn" id="compare"><summary><span>Aggregator vs DEX</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>Aggregator vs a single DEX</h2><p>A DEX is one venue with its own pools. An aggregator sits on top of many venues and decides where each part of your order goes.</p><div class="tbl"><table><caption>One DEX vs an aggregator route</caption><thead><tr><th scope="col"></th><th scope="col">Single DEX</th><th scope="col">Aggregator</th></tr></thead><tbody><tr><th scope="row">Liquidity</th><td>pools of one venue</td><td>pools of many venues combined</td></tr><tr><th scope="row">Routing</th><td>one pair, one fixed path</td><td>split across paths and hops</td></tr><tr><th scope="row">Price impact</th><td>depends on that pool's depth</td><td>can be reduced by splitting the order</td></tr><tr><th scope="row">Gas</th><td>one pool call</td><td>can be higher for multi-hop routes</td></tr></tbody></table></div><h3>In practice</h3><p>The aggregator quote already accounts for gas on each route, so the cheapest-looking path is not always the one with the most hops. You see the final expected output before you sign.</p></div></details>
+
+      <details class="lcard" name="learn" id="how"><summary><span>How to swap</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>How to swap with ParaSwap</h2><h3>Route and quote</h3><p>After you pick a pair and an amount, the aggregator compares routes and shows the expected output, price impact and a slippage tolerance. Nothing is signed until you confirm.</p><h3>Step by step</h3><ol><li>Connect your wallet and select the network you want to trade on.</li><li>Choose the token to sell and the token to buy, then enter an amount.</li><li>Review the quote, the route and the estimated gas.</li><li>Approve the sell token once if this wallet has not used it before.</li><li>Sign the swap; it settles on-chain and the bought token arrives in your wallet.</li></ol><p>Native coins such as ETH need no approval, only the swap transaction.</p></div></details>
+
+      <details class="lcard" name="learn" id="fees"><summary><span>Fees &amp; gas</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>What a swap costs</h2><h3>Gas</h3><p>Approving and swapping are separate transactions, each paid in the native coin of the chain you use. See how <a href="https://ethereum.org/en/developers/docs/gas/" target="_blank" rel="nofollow noopener">gas works</a>.</p><h3>Trading cost</h3><p>The quoted output already reflects pool fees, price impact and any aggregator fee. Your slippage tolerance sets how far the final price may move before the transaction reverts.</p><h3>Keep native coin for gas</h3><p>Holding stablecoins or other tokens does not pay for gas. Keep a little of the chain's native coin in the wallet, or you cannot approve or sign.</p></div></details>
+
+      <details class="lcard" name="learn" id="security"><summary><span>Security</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>Staying safe</h2><h3>Non-custodial by design</h3><p>You connect your own wallet and sign every transaction yourself. This interface quotes and routes; it never holds your funds or private keys.</p><h3>Before you sign</h3><ul><li>Check the token contract address; lookalike tokens are common.</li><li>Approve only the amount you need and revoke old <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/" target="_blank" rel="nofollow noopener">ERC-20</a> allowances you no longer use.</li><li>Compare price impact and slippage with the size of your order.</li><li>Smart contracts can contain bugs, so risk is never zero.</li></ul></div></details>
+
+      <details class="lcard" name="learn" id="faq"><summary><span>FAQ</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody lfaq"><h2>ParaSwap FAQ</h2>
+<h3>What is ParaSwap used for?</h3>
+<p>ParaSwap is used to swap one token for another through a DEX aggregator. It searches several liquidity sources and routes your order across them, so you get one quote instead of checking each exchange yourself.</p>
+<h3>How does an aggregator find a price?</h3>
+<p>It queries many pools and venues, then tests single and split routes, including multi-hop paths. The route with the strongest expected output after gas is the one shown in the quote.</p>
+<h3>Why does my quote change before I confirm?</h3>
+<p>Pool balances and gas costs move with every block. Slippage tolerance caps how far the price may drift, and if the market moves past it the transaction reverts instead of filling at a worse rate.</p>
+<h3>Do I need to approve a token before swapping?</h3>
+<p>For ERC-20 tokens, yes. A one-time allowance lets the router move that token on your behalf, and it is a separate transaction that costs gas. Native coins such as ETH need no approval.</p>
+<h3>Which networks can I use?</h3>
+<p>The aggregator works on several EVM chains. Pick the network in your wallet and the interface, and trade tokens that exist on that chain. Moving tokens between chains needs a bridge, not a swap.</p>
+<h3>Does this interface hold my funds?</h3>
+<p>No. It is non-custodial: you connect your own wallet and sign each transaction, and tokens move directly between your wallet and the on-chain contracts. There is no account to create and no deposit to make.</p></div></details>
+    </div>
+  </section>
 </main>
-<section class="c9f75dc" id="sources" aria-labelledby="sources-title">
-<h2 class="cad19e3" id="sources-title">Sources</h2>
-<ul class="cafcb34"><li><a class="c47c3bc" href="https://developers.paraswap.network/" rel="nofollow noopener" target="_blank">ParaSwap Developer Documentation</a></li>
-<li><a class="c47c3bc" href="https://etherscan.io/" rel="nofollow noopener" target="_blank">Etherscan</a></li>
-<li><a class="c47c3bc" href="https://ethereum.org/" rel="nofollow noopener" target="_blank">ethereum.org</a></li>
-<li><a class="c47c3bc" href="https://defillama.com/" rel="nofollow noopener" target="_blank">DefiLlama</a></li></ul>
-</section>
-<footer class="c92ee8e"><p>Updated Nov 03, 2026</p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
-</div>
+
+<footer>
+  <div class="foot"><span>&copy; 2026 ParaSwap</span><span class="sep">&middot;</span><a href="legal.html#privacy">Privacy</a><span class="sep">&middot;</span><a href="legal.html#terms">Terms</a><span class="sep">&middot;</span><span>Non-custodial &middot; DEX aggregator</span></div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
-(() => {
-  const amount = document.getElementById('amount');
-  const received = document.getElementById('received');
-  const fee = document.getElementById('fee');
-  const time = document.getElementById('time');
-  const error = document.getElementById('amount-error');
-  const format = new Intl.NumberFormat('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  let timer;
-  function update() {
-    const value = amount.valueAsNumber;
-    if (!Number.isFinite(value) || !amount.validity.valid) {
-      amount.setAttribute('aria-invalid', 'true');
-      error.textContent = 'Enter an amount from 1 to 1,000,000,000 with up to two decimal places.';
-      received.value = '—';
-      fee.value = '—';
-      time.value = '—';
-      return;
-    }
-    amount.removeAttribute('aria-invalid');
-    error.textContent = '';
-    const amountCents = Math.round(value * 100);
-    const feeCents = Math.round(amountCents * 0.0015 + 25);
-    const minutes = 2 + Math.ceil(Math.log10(value));
-    received.value = format.format((amountCents - feeCents) / 100);
-    fee.value = format.format(feeCents / 100);
-    time.value = minutes + '–' + (minutes + 2) + ' min';
-  }
-  amount.addEventListener('input', () => {
-    clearTimeout(timer);
-    timer = setTimeout(update, 180);
-  });
-  amount.addEventListener('change', () => {
-    clearTimeout(timer);
-    update();
-  });
-  update();
+(function(){
+"use strict";
+var tabs=[].slice.call(document.querySelectorAll('.tab'));
+tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.classList.toggle('on',x===t);});});});
+
+var toast=document.getElementById('toast'),tT;
+function notify(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){toast.classList.remove('show');},3000);}
+[].slice.call(document.querySelectorAll('[data-toast]')).forEach(function(b){b.addEventListener('click',function(){notify(b.getAttribute('data-toast'));});});
+
+function openHash(){var id=location.hash.slice(1);if(!id)return;var c=document.getElementById(id);if(c&&c.matches&&c.matches('.lcard[name="learn"]'))c.open=true;}
+window.addEventListener('hashchange',openHash);openHash();
+[].slice.call(document.querySelectorAll('.nlinks a')).forEach(function(a){a.addEventListener('click',function(){var c=document.getElementById(a.getAttribute('href').slice(1));if(c&&c.matches('.lcard'))c.open=true;});});
 })();
 </script>
-</body>
-</html>
+</body></html>
